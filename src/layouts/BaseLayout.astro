@@ -10,15 +10,40 @@ import '../styles/tailwind.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta property="og:image" content="https://ryanblunden.dev/og-image.jpg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<style is:inline>
+			:root {
+				font-synthesis-weight: none;
+				text-rendering: optimizeLegibility;
+				color-scheme: dark;
+			}
+
+			@keyframes rise {
+				from {
+					opacity: 0;
+					transform: translateY(24px);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		</style>
 	</head>
-	<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
+	<body class="bg-gray-50 font-sans text-gray-900 antialiased dark:bg-gray-900 dark:text-white">
 		<slot />
 		<script is:inline type="module">
 			import 'flowbite';

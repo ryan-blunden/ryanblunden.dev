@@ -8,108 +8,143 @@ import FAQ from '../components/faq.astro';
 import CTA from '../components/cta.astro';
 import YouTubeGrid from '../components/youtube-grid.astro';
 
-const title = 'Technical Video Content Creation';
+const title = 'Developer Enablement Video';
 const description =
-	'Creative and versatile technical content creator with over a decade of experience in Technical Training, Technical Writing, Video Production, and Content Marketing.';
+	'I turn existing technical materials into accurate video used for developer enablement, product onboarding, and customer success.';
 ---
 
 <BaseLayout title={title} description={description}>
 	<GoogleAnalytics />
 	<main>
-		<section class="bg-gray-50 dark:bg-gray-900">
-			<div class="mx-auto max-w-screen-xl px-4 py-12 lg:py-20">
-				<div class="grid items-center gap-10 lg:grid-cols-12">
-					<div class="lg:col-span-6">
-						<p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 dark:text-blue-400">
-							Technical video content
-						</p>
-						<h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl xl:text-6xl">
-							{title}
-						</h1>
-						<p class="mb-6 text-lg text-gray-600 dark:text-gray-300">
-							I help marketing, product, and developer relations teams produce highly
-							technical content that educates and inspires action.
-						</p>
-						<div class="flex flex-wrap gap-3">
-							<a
-								class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-								href="https://calendly.com/ryan-blunden/"
-							>
-								Let's Talk!
-							</a>
-							<a
-								class="inline-flex items-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-500 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-								href="mailto:ryan.blunden@gmail.com?subject=Enquiry+from+ryanblunden.dev"
-							>
-								Email Me
-							</a>
-						</div>
+		<header class="relative z-20">
+			<div class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-6">
+				<a class="text-lg font-semibold text-gray-900 dark:text-white" href="/">Ryan Blunden</a>
+				<nav class="hidden items-center gap-6 text-sm font-medium text-gray-500 dark:text-gray-400 md:flex">
+					<a class="transition hover:text-primary-700 dark:hover:text-primary-500" href="#services">Services</a>
+					<a class="transition hover:text-primary-700 dark:hover:text-primary-500" href="#my-work">Work</a>
+					<a class="transition hover:text-primary-700 dark:hover:text-primary-500" href="#faqs">FAQs</a>
+				</nav>
+				<a
+					class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+					href="https://calendly.com/ryan-blunden/"
+				>
+					Book a call
+				</a>
+			</div>
+		</header>
+
+		<section class="bg-white dark:bg-gray-900">
+			<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:py-24 pt-20 sm:pt-24 lg:pt-32">
+				<div class="text-center motion-safe:animate-[rise_0.8s_ease-out]">
+					<span class="inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
+						Technical video studio
+					</span>
+					<h1 class="mt-5 text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+						Turn technical knowledge into developer-ready video.
+					</h1>
+					<p class="mx-auto mt-4 max-w-3xl text-lg text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
+						I turn existing technical materials into accurate video used for developer enablement, product onboarding, and customer success.
+					</p>
+					<div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+						<a
+							class="inline-flex items-center justify-center rounded-lg bg-primary-700 px-5 py-3 text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-900"
+							href="https://calendly.com/ryan-blunden/"
+						>
+							Let's talk
+						</a>
+						<a
+							class="inline-flex items-center justify-center rounded-lg border border-gray-200 px-5 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-800"
+							href="#my-work"
+						>
+							See recent work
+						</a>
 					</div>
-					<div class="lg:col-span-6">
-						<div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm dark:border-gray-700">
-							<iframe
-								class="aspect-video h-full w-full"
-								src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
-								title="Featured technical video"
-								loading="eager"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-							></iframe>
-						</div>
+					<div class="mt-10 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+						<span>Trusted by teams at</span>
+						<span class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-1 text-[0.6rem] dark:border-gray-700 dark:bg-gray-800">Octomind</span>
+						<span class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-1 text-[0.6rem] dark:border-gray-700 dark:bg-gray-800">Doppler</span>
+						<span class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-1 text-[0.6rem] dark:border-gray-700 dark:bg-gray-800">Instabug</span>
+						<span class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-1 text-[0.6rem] dark:border-gray-700 dark:bg-gray-800">Sourcegraph</span>
+						<span class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-1 text-[0.6rem] dark:border-gray-700 dark:bg-gray-800">Tenable</span>
+					</div>
+				</div>
+				<div class="mt-10 sm:mt-12 lg:mt-16">
+					<div
+						class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-xl dark:border-gray-700 motion-safe:animate-[rise_1s_ease-out]"
+						style="animation-delay: 120ms;"
+					>
+						<iframe
+							class="aspect-video h-full w-full"
+							src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
+							title="Featured technical video"
+							loading="eager"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+						></iframe>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="bg-white dark:bg-gray-900">
-			<div class="mx-auto max-w-screen-xl px-4 py-12">
-				<div class="grid gap-6 md:grid-cols-2">
-					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">About Me</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I'm a freelance Developer Advocate, Application Developer, and Content
-							Creator with over a decade of experience in Technical Writing, Video
-							Production, Content Marketing, and Technical Training.
+		<section class="bg-gray-50 dark:bg-gray-900">
+			<div class="mx-auto max-w-screen-xl px-4 py-14">
+				<div class="grid gap-10 lg:grid-cols-12">
+					<div class="space-y-5 lg:col-span-5">
+						<p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">What I do</p>
+						<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+							Agency-level video without the agency overhead.
+						</h2>
+						<p class="text-lg text-gray-500 dark:text-gray-400">
+							I'm a freelance developer advocate, application developer, and content creator with over a decade of experience in technical training, video production, and content marketing.
 						</p>
-						<p class="mt-3 text-gray-600 dark:text-gray-300">
-							I will create content that connects with your target audience, educates
-							them about your products or services, and persuades them to take action.
+						<p class="text-lg text-gray-500 dark:text-gray-400">
+							I work with marketing, product, and developer relations teams to turn complex ideas into clear narratives that teach, convert, and support customers.
 						</p>
-					</article>
-					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">How I Can Help</h3>
-						<p class="text-gray-600 dark:text-gray-300">Here are just a few ways I can be of assistance:</p>
-						<ul class="mt-4 list-none space-y-2 text-gray-600 dark:text-gray-300">
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+						<ul class="space-y-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+							<li class="flex items-center gap-3">
+								<span class="h-2 w-2 rounded-full bg-primary-600"></span>
 								Increase the production of quality developer content.
 							</li>
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
-								Make video a greater part of your content strategy.
+							<li class="flex items-center gap-3">
+								<span class="h-2 w-2 rounded-full bg-primary-600"></span>
+								Make video a larger part of your enablement strategy.
 							</li>
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
-								Repurpose existing content for social media.
+							<li class="flex items-center gap-3">
+								<span class="h-2 w-2 rounded-full bg-primary-600"></span>
+								Repurpose existing docs and demos for social clips.
 							</li>
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
-								Ensure your docs provide a great developer experience.
-							</li>
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
-								Showcase your killer features with sample apps.
-							</li>
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
-								Be a writing assistant for your engineers.
-							</li>
-							<li class="flex items-start gap-2">
-								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
-								Provide coaching consultation for improving your content.
+							<li class="flex items-center gap-3">
+								<span class="h-2 w-2 rounded-full bg-primary-600"></span>
+								Guide engineers and PMs through messaging and delivery.
 							</li>
 						</ul>
-					</article>
+					</div>
+					<div class="grid gap-6 sm:grid-cols-2 lg:col-span-7">
+						<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Video strategy and series planning</h3>
+							<p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+								Clarify the narrative, outline the series, and map content to product goals.
+							</p>
+						</article>
+						<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Product demos that build confidence</h3>
+							<p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+								Hands-on walkthroughs that make complex workflows easy to adopt.
+							</p>
+						</article>
+						<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Documentation to video pipelines</h3>
+							<p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+								Reuse existing docs, demos, and blog posts to speed up production.
+							</p>
+						</article>
+						<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Fast, collaborative delivery</h3>
+							<p class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+								Lightweight reviews, tight feedback loops, and polished delivery.
+							</p>
+						</article>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -162,69 +197,51 @@ const description =
 		</section>
 
 		<section class="bg-white dark:bg-gray-900" id="services">
-			<div class="mx-auto max-w-screen-xl px-4 py-12">
-				<div class="mx-auto mb-8 max-w-2xl text-center">
-					<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Services</h2>
-					<p class="mt-3 text-gray-600 dark:text-gray-300">
-						Bring clarity and momentum to your content pipeline with hands-on support.
+			<div class="mx-auto max-w-screen-xl px-4 py-14">
+				<div class="mx-auto mb-10 max-w-2xl text-center">
+					<p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Services</p>
+					<h2 class="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+						End-to-end video production for technical teams.
+					</h2>
+					<p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+						Every engagement is tailored to your developer audience, product maturity, and go-to-market goals.
 					</p>
 				</div>
 				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Video Production</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can script or entirely produce technical videos that explain complex
-							concepts, promote a new feature, or teach your audience something new.
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Developer onboarding series</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400">
+							Launch a video series that helps new users reach their first success quickly.
 						</p>
 					</article>
 					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Blog Posts and Tutorials</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can craft engaging and informative blog posts and tutorials that educate
-							your audience, and drive traffic to your website.
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Product demos and feature walkthroughs</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400">
+							Highlight core workflows, integrations, and the moments that sell your product.
 						</p>
 					</article>
 					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Sample Apps & Product Demos</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can create sample apps, open source reference solutions, and product demos
-							to show real-world usage of your product and services.
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Technical enablement libraries</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400">
+							Build a consistent catalog of short videos tied to docs, demos, and release notes.
 						</p>
 					</article>
 					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Marketing Content</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can work with marketing and product teams to create copy for landing
-							pages, email campaigns, social media, and paid advertising.
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Conference, event, and booth loops</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400">
+							High-impact showcase reels and looping demos that explain your product at a glance.
 						</p>
 					</article>
 					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Technical Writing</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can help you keep your documentation current by reviewing and updating
-							existing documentation or contributing new technical content.
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Short-form clips and social cutdowns</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400">
+							Repurpose long-form demos into launches, announcements, and social content.
 						</p>
 					</article>
 					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">White Papers and Case Studies</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can write white papers to highlight industry thought leadership and case
-							studies that showcase the success stories of your customers and the impact
-							on their business.
-						</p>
-					</article>
-					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Review and Feedback</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can review and provide editing services for content you're producing, e.g.
-							polishing content from external blog contributors.
-						</p>
-					</article>
-					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Writing Assistant</h3>
-						<p class="text-gray-600 dark:text-gray-300">
-							I can work with engineers in your company to help them produce content by
-							assisting with planning, outlining, drafting, and revising their content.
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Narrative scripting and storyboards</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400">
+							Translate technical detail into tight scripts and clean, confident delivery.
 						</p>
 					</article>
 				</div>
@@ -233,10 +250,11 @@ const description =
 
 		<section class="bg-gray-50 dark:bg-gray-900" id="my-work">
 			<div class="mx-auto max-w-screen-xl px-4 py-12">
-				<div class="mx-auto mb-8 max-w-2xl text-center">
-					<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">My Work</h2>
-					<p class="mt-3 text-gray-600 dark:text-gray-300">
-						A snapshot of recent technical video projects and product demos.
+				<div class="mx-auto mb-10 max-w-2xl text-center">
+					<p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Recent work</p>
+					<h2 class="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">My Work</h2>
+					<p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+						A snapshot of developer enablement series, product demos, and launch videos.
 					</p>
 				</div>
 				<YouTubeGrid
@@ -244,104 +262,104 @@ const description =
 						{
 							href: 'https://www.youtube.com/watch?v=ZHYK0m9rpB0',
 							title: 'Experiment, Test, and Create an MCP Server',
-						description:
-							'Learn how to roll out your own MCP server using an Open API spec and the Speakeasy CLI.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s',
-						title: 'Generating a Terraform Provider from an API Spec | Part I',
-						description:
-							'Create a Terraform provider using the Speakeasy CLI and OpenAPI spec.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s',
-						title: 'Generating a Terraform Provider from an API Spec | Part II',
-						description:
-							'Publish the Terraform provider to the Terraform Registry.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=Ef5QdrmCOs8',
-						title: 'Speakeasy Getting Started Series | Part 1',
-						description: 'Optimizing your OpenAPI spec.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=BphVOeWODEY',
-						title: 'Speakeasy Getting Started Series | Part 2',
-						description: 'Generating your first SDK.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=RmpgVIFzed4',
-						title: 'Speakeasy Getting Started Series | Part 3',
-						description: 'CI/CD Configuration',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=i9XWzZnDikA',
-						title: 'Speakeasy Getting Started Series | Part 4',
-						description: 'Publishing your SDK.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=qviAaoXbV9k',
-						title: 'Bryntum YouTube Video Ad',
-						description: "Video add for Bryntum's Scheduler web component.",
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=RU8ZRswPb_s',
-						title: 'Doppler vs Traditional Secrets Managers',
-						description: 'Shows how Doppler differs from traditional secrets managers.',
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=GHAZNmvO5gY',
-						title: 'Bryntum Home Page Video',
-						description: "Promotional video showcasing Bryntum's web components .",
-					},
-					{
-						href: 'https://www.youtube.com/watch?v=zLMEN9zuLJY',
-						title: 'Bryntum Conference Booth Demo Video',
-						description: 'Looping video for Bryntum showcasing their web components.',
-					},
-					{
-						href: 'https://youtu.be/PGy5xkzmTS0',
-						title: 'Doppler Enterprise Demo',
-						description:
-							"Quick 5 minute video to showcase Doppler's enterprise capabilities.",
-					},
-					{
-						href: 'https://youtu.be/-RamASjC-Ng',
-						title: 'SecretOps Beginners Series | Part 1',
-						description: 'Part explainer (SecretOps) and how to get started with Doppler.',
-					},
-					{
-						href: 'https://youtu.be/hc0ydmQVbcI',
-						title: 'SecretOps Beginners Series | Part 2',
-						description: "Explains Doppler's Team Management features.",
-					},
-					{
-						href: 'https://youtu.be/0aFCz-cFjLY',
-						title: 'SecretOps Beginners Series | Part 3',
-						description: "Explains Doppler's secrets orchestration model.",
-					},
-					{
-						href: 'https://youtu.be/Hdna-VLio2k',
-						title: 'SecretOps Beginners Series | Part 4',
-						description: "Showcases Doppler's secrets management UI features.",
-					},
-					{
-						href: 'https://youtu.be/U9q_J80El2Y',
-						title: 'SecretOps Beginners Series | Part 5',
-						description: "Doppler's database and API secrets rotation in action.",
-					},
-					{
-						href: 'https://youtu.be/wOkow-qb_Ys',
-						title: 'Doppler 2 Minute Overview',
-						description:
-							'General overview of Doppler for managing application config and secrets.',
-					},
-					{
-						href: 'https://youtu.be/a_5ewsxTtUA',
-						title: 'Doppler Kubernetes CLI Integration',
-						description:
-							'How to use the Doppler CLI to inject secrets into a Kubernetes deployment.',
-					},
+							description:
+								'Learn how to roll out your own MCP server using an Open API spec and the Speakeasy CLI.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s',
+							title: 'Generating a Terraform Provider from an API Spec | Part I',
+							description:
+								'Create a Terraform provider using the Speakeasy CLI and OpenAPI spec.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s',
+							title: 'Generating a Terraform Provider from an API Spec | Part II',
+							description: 'Publish the Terraform provider to the Terraform Registry.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=Ef5QdrmCOs8',
+							title: 'Speakeasy Getting Started Series | Part 1',
+							description: 'Optimizing your OpenAPI spec.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=BphVOeWODEY',
+							title: 'Speakeasy Getting Started Series | Part 2',
+							description: 'Generating your first SDK.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=RmpgVIFzed4',
+							title: 'Speakeasy Getting Started Series | Part 3',
+							description: 'CI/CD Configuration',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=i9XWzZnDikA',
+							title: 'Speakeasy Getting Started Series | Part 4',
+							description: 'Publishing your SDK.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=qviAaoXbV9k',
+							title: 'Bryntum YouTube Video Ad',
+							description: "Video ad for Bryntum's Scheduler web component.",
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=RU8ZRswPb_s',
+							title: 'Doppler vs Traditional Secrets Managers',
+							description: 'Shows how Doppler differs from traditional secrets managers.',
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=GHAZNmvO5gY',
+							title: 'Bryntum Home Page Video',
+							description: "Promotional video showcasing Bryntum's web components.",
+						},
+						{
+							href: 'https://www.youtube.com/watch?v=zLMEN9zuLJY',
+							title: 'Bryntum Conference Booth Demo Video',
+							description: 'Looping video for Bryntum showcasing their web components.',
+						},
+						{
+							href: 'https://youtu.be/PGy5xkzmTS0',
+							title: 'Doppler Enterprise Demo',
+							description:
+								"Quick 5 minute video to showcase Doppler's enterprise capabilities.",
+						},
+						{
+							href: 'https://youtu.be/-RamASjC-Ng',
+							title: 'SecretOps Beginners Series | Part 1',
+							description:
+								'Part explainer (SecretOps) and how to get started with Doppler.',
+						},
+						{
+							href: 'https://youtu.be/hc0ydmQVbcI',
+							title: 'SecretOps Beginners Series | Part 2',
+							description: "Explains Doppler's Team Management features.",
+						},
+						{
+							href: 'https://youtu.be/0aFCz-cFjLY',
+							title: 'SecretOps Beginners Series | Part 3',
+							description: "Explains Doppler's secrets orchestration model.",
+						},
+						{
+							href: 'https://youtu.be/Hdna-VLio2k',
+							title: 'SecretOps Beginners Series | Part 4',
+							description: "Showcases Doppler's secrets management UI features.",
+						},
+						{
+							href: 'https://youtu.be/U9q_J80El2Y',
+							title: 'SecretOps Beginners Series | Part 5',
+							description: "Doppler's database and API secrets rotation in action.",
+						},
+						{
+							href: 'https://youtu.be/wOkow-qb_Ys',
+							title: 'Doppler 2 Minute Overview',
+							description:
+								'General overview of Doppler for managing application config and secrets.',
+						},
+						{
+							href: 'https://youtu.be/a_5ewsxTtUA',
+							title: 'Doppler Kubernetes CLI Integration',
+							description:
+								'How to use the Doppler CLI to inject secrets into a Kubernetes deployment.',
+						},
 					]}
 				/>
 			</div>
@@ -349,9 +367,10 @@ const description =
 
 		<section class="bg-white dark:bg-gray-900" id="faqs">
 			<div class="mx-auto max-w-screen-xl px-4 py-12">
-				<div class="mx-auto mb-8 max-w-2xl text-center">
-					<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">FAQs</h2>
-					<p class="mt-3 text-gray-600 dark:text-gray-300">
+				<div class="mx-auto mb-10 max-w-2xl text-center">
+					<p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">FAQs</p>
+					<h2 class="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">FAQs</h2>
+					<p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
 						Answers to the questions teams ask before we kick off.
 					</p>
 				</div>
@@ -444,15 +463,14 @@ const description =
 		</section>
 
 		<section class="bg-gray-50 dark:bg-gray-900">
-			<div class="mx-auto max-w-screen-md px-4 pb-16 pt-4">
+			<div class="mx-auto max-w-screen-md px-4 pb-16 pt-6">
 				<CTA
-					title="Ready to take your content to the next level?"
+					title="Ready to launch your next video series?"
 					cta="Book a Call"
 					href="https://calendly.com/ryan-blunden"
 					target="_blank"
 				>
-					Book a free clarity call with me to see what's possible and how I may be of
-					service.
+					Book a free clarity call to map out scope, timelines, and the right format for your team.
 				</CTA>
 			</div>
 		</section>

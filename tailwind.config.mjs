@@ -9,11 +9,40 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: [
+					'Inter',
+					'ui-sans-serif',
+					'system-ui',
+					'-apple-system',
+					'Segoe UI',
+					'Roboto',
+					'Helvetica Neue',
+					'Arial',
+					'Noto Sans',
+					'sans-serif',
+					'Apple Color Emoji',
+					'Segoe UI Emoji',
+					'Segoe UI Symbol',
+					'Noto Color Emoji',
+				],
+			},
 			colors: {
 				// Your preferred accent color. Indigo is closest to Starlight’s defaults.
 				accent: colors.indigo,
-				// Your preferred gray scale. Zinc is closest to Starlight’s defaults.
-				gray: colors.zinc,
+				primary: {
+					50: '#faf6f5',
+					100: '#f3ebe8',
+					200: '#edd3c9',
+					300: '#ffa98a',
+					400: '#ff8052',
+					500: '#ff571a',
+					600: '#e63d00',
+					700: '#bd3200',
+					800: '#8f2600',
+					900: '#661b00',
+					950: '#3c1507',
+				},
 			},
 		},
 	},
