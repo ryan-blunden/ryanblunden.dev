@@ -15,71 +15,106 @@ const description =
 
 <BaseLayout title={title} description={description}>
 	<GoogleAnalytics />
-	<main class="page">
-		<section class="hero">
-			<div class="stack">
-				<div class="copy">
-					<p class="eyebrow">Technical video content</p>
-					<h1>{title}</h1>
-					<p class="tagline">
-						I help marketing, product, and developer relations teams produce highly
-						technical content that educates and inspires action.
-					</p>
+	<main>
+		<section class="bg-gray-50 dark:bg-gray-900">
+			<div class="mx-auto max-w-screen-xl px-4 py-12 lg:py-20">
+				<div class="grid items-center gap-10 lg:grid-cols-12">
+					<div class="lg:col-span-6">
+						<p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 dark:text-blue-400">
+							Technical video content
+						</p>
+						<h1 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl xl:text-6xl">
+							{title}
+						</h1>
+						<p class="mb-6 text-lg text-gray-600 dark:text-gray-300">
+							I help marketing, product, and developer relations teams produce highly
+							technical content that educates and inspires action.
+						</p>
+						<div class="flex flex-wrap gap-3">
+							<a
+								class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+								href="https://calendly.com/ryan-blunden/"
+							>
+								Let's Talk!
+							</a>
+							<a
+								class="inline-flex items-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-500 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+								href="mailto:ryan.blunden@gmail.com?subject=Enquiry+from+ryanblunden.dev"
+							>
+								Email Me
+							</a>
+						</div>
+					</div>
+					<div class="lg:col-span-6">
+						<div class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-sm dark:border-gray-700">
+							<iframe
+								class="aspect-video h-full w-full"
+								src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
+								title="Featured technical video"
+								loading="eager"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen
+							></iframe>
+						</div>
+					</div>
 				</div>
-				<div class="actions hero-actions">
-					<a class="button primary" href="https://calendly.com/ryan-blunden/">
-						Let's Talk!
-					</a>
-					<a
-						class="button secondary"
-						href="mailto:ryan.blunden@gmail.com?subject=Enquiry+from+ryanblunden.dev"
-					>
-						Email Me
-					</a>
-				</div>
-			</div>
-			<div class="hero-video">
-				<iframe
-					src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
-					title="Featured technical video"
-					loading="eager"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen
-				></iframe>
 			</div>
 		</section>
 
-		<section class="section">
-			<div class="card-grid">
-				<article class="card">
-					<h3>About Me</h3>
-					<p>
-						I'm a freelance Developer Advocate, Application Developer, and Content
-						Creator with over a decade of experience in Technical Writing, Video
-						Production, Content Marketing, and Technical Training.
-					</p>
-					<p>
-						I will create content that connects with your target audience, educates
-						them about your products or services, and persuades them to take action.
-					</p>
-				</article>
-				<article class="card">
-					<h3>How I Can Help</h3>
-					<p>Here are just a few ways I can be of assistance:</p>
-					<ul class="list">
-						<li>Increase the production of quality developer content.</li>
-						<li>Make video a greater part of your content strategy.</li>
-						<li>Repurpose existing content for social media.</li>
-						<li>Ensure your docs provide a great developer experience.</li>
-						<li>Showcase your killer features with sample apps.</li>
-						<li>Be a writing assistant for your engineers.</li>
-						<li>Provide coaching consultation for improving your content.</li>
-					</ul>
-				</article>
+		<section class="bg-white dark:bg-gray-900">
+			<div class="mx-auto max-w-screen-xl px-4 py-12">
+				<div class="grid gap-6 md:grid-cols-2">
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">About Me</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I'm a freelance Developer Advocate, Application Developer, and Content
+							Creator with over a decade of experience in Technical Writing, Video
+							Production, Content Marketing, and Technical Training.
+						</p>
+						<p class="mt-3 text-gray-600 dark:text-gray-300">
+							I will create content that connects with your target audience, educates
+							them about your products or services, and persuades them to take action.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">How I Can Help</h3>
+						<p class="text-gray-600 dark:text-gray-300">Here are just a few ways I can be of assistance:</p>
+						<ul class="mt-4 list-none space-y-2 text-gray-600 dark:text-gray-300">
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Increase the production of quality developer content.
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Make video a greater part of your content strategy.
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Repurpose existing content for social media.
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Ensure your docs provide a great developer experience.
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Showcase your killer features with sample apps.
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Be a writing assistant for your engineers.
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="mt-1 h-2 w-2 rounded-full bg-blue-600"></span>
+								Provide coaching consultation for improving your content.
+							</li>
+						</ul>
+					</article>
+				</div>
 			</div>
 		</section>
 
-		<section class="section">
+		<section class="bg-gray-50 dark:bg-gray-900">
 			<TestimonialGrid title="Testimonials">
 				<Testimonial
 					name="Maria Zahorcova"
@@ -126,76 +161,89 @@ const description =
 			</TestimonialGrid>
 		</section>
 
-		<section class="section" id="services">
-			<h2 class="section-title">Services</h2>
-			<div class="card-grid">
-				<article class="card">
-					<h3>Video Production</h3>
-					<p>
-						I can script or entirely produce technical videos that explain complex
-						concepts, promote a new feature, or teach your audience something new.
+		<section class="bg-white dark:bg-gray-900" id="services">
+			<div class="mx-auto max-w-screen-xl px-4 py-12">
+				<div class="mx-auto mb-8 max-w-2xl text-center">
+					<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Services</h2>
+					<p class="mt-3 text-gray-600 dark:text-gray-300">
+						Bring clarity and momentum to your content pipeline with hands-on support.
 					</p>
-				</article>
-				<article class="card">
-					<h3>Blog Posts and Tutorials</h3>
-					<p>
-						I can craft engaging and informative blog posts and tutorials that educate
-						your audience, and drive traffic to your website.
-					</p>
-				</article>
-				<article class="card">
-					<h3>Sample Apps & Product Demos</h3>
-					<p>
-						I can create sample apps, open source reference solutions, and product demos
-						to show real-world usage of your product and services.
-					</p>
-				</article>
-				<article class="card">
-					<h3>Marketing Content</h3>
-					<p>
-						I can work with marketing and product teams to create copy for landing
-						pages, email campaigns, social media, and paid advertising.
-					</p>
-				</article>
-				<article class="card">
-					<h3>Technical Writing</h3>
-					<p>
-						I can help you keep your documentation current by reviewing and updating
-						existing documentation or contributing new technical content.
-					</p>
-				</article>
-				<article class="card">
-					<h3>White Papers and Case Studies</h3>
-					<p>
-						I can write white papers to highlight industry thought leadership and case
-						studies that showcase the success stories of your customers and the impact
-						on their business.
-					</p>
-				</article>
-				<article class="card">
-					<h3>Review and Feedback</h3>
-					<p>
-						I can review and provide editing services for content you're producing, e.g.
-						polishing content from external blog contributors.
-					</p>
-				</article>
-				<article class="card">
-					<h3>Writing Assistant</h3>
-					<p>
-						I can work with engineers in your company to help them produce content by
-						assisting with planning, outlining, drafting, and revising their content.
-					</p>
-				</article>
+				</div>
+				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Video Production</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can script or entirely produce technical videos that explain complex
+							concepts, promote a new feature, or teach your audience something new.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Blog Posts and Tutorials</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can craft engaging and informative blog posts and tutorials that educate
+							your audience, and drive traffic to your website.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Sample Apps & Product Demos</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can create sample apps, open source reference solutions, and product demos
+							to show real-world usage of your product and services.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Marketing Content</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can work with marketing and product teams to create copy for landing
+							pages, email campaigns, social media, and paid advertising.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Technical Writing</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can help you keep your documentation current by reviewing and updating
+							existing documentation or contributing new technical content.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">White Papers and Case Studies</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can write white papers to highlight industry thought leadership and case
+							studies that showcase the success stories of your customers and the impact
+							on their business.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Review and Feedback</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can review and provide editing services for content you're producing, e.g.
+							polishing content from external blog contributors.
+						</p>
+					</article>
+					<article class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+						<h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Writing Assistant</h3>
+						<p class="text-gray-600 dark:text-gray-300">
+							I can work with engineers in your company to help them produce content by
+							assisting with planning, outlining, drafting, and revising their content.
+						</p>
+					</article>
+				</div>
 			</div>
 		</section>
 
-		<section class="section" id="my-work">
-			<h2 class="section-title">My Work</h2>
-			<YouTubeGrid
-				videos={[
-					{
-						href: 'https://www.youtube.com/watch?v=ZHYK0m9rpB0',
-						title: 'Experiment, Test, and Create an MCP Server',
+		<section class="bg-gray-50 dark:bg-gray-900" id="my-work">
+			<div class="mx-auto max-w-screen-xl px-4 py-12">
+				<div class="mx-auto mb-8 max-w-2xl text-center">
+					<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">My Work</h2>
+					<p class="mt-3 text-gray-600 dark:text-gray-300">
+						A snapshot of recent technical video projects and product demos.
+					</p>
+				</div>
+				<YouTubeGrid
+					videos={[
+						{
+							href: 'https://www.youtube.com/watch?v=ZHYK0m9rpB0',
+							title: 'Experiment, Test, and Create an MCP Server',
 						description:
 							'Learn how to roll out your own MCP server using an Open API spec and the Speakeasy CLI.',
 					},
@@ -294,101 +342,109 @@ const description =
 						description:
 							'How to use the Doppler CLI to inject secrets into a Kubernetes deployment.',
 					},
-				]}
-			/>
+					]}
+				/>
+			</div>
 		</section>
 
-		<section class="section" id="faqs">
-			<h2 class="section-title">FAQs</h2>
-			<FAQList title="FAQs">
-				<FAQ title="How do you charge for your services?">
-					<p>
-						I usually charge a set rate for projects and larger jobs with predefined
-						scope or an hourly rate for small one-off tasks.
+		<section class="bg-white dark:bg-gray-900" id="faqs">
+			<div class="mx-auto max-w-screen-xl px-4 py-12">
+				<div class="mx-auto mb-8 max-w-2xl text-center">
+					<h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">FAQs</h2>
+					<p class="mt-3 text-gray-600 dark:text-gray-300">
+						Answers to the questions teams ask before we kick off.
 					</p>
-					<p>
-						In any case, you'll always receive a cost estimate up-front and I will
-						provide you with a detailed invoice for each project.
-					</p>
-				</FAQ>
-				<FAQ title="How long does it take to complete a project?">
-					<p>
-						The time frame for completion depends upon the scope and complexity of
-						work and how many other jobs are in the pipeline.
-					</p>
-					<p>
-						The more we work together and the greater understanding I have of your
-						product and services, the faster I can turn around work.
-					</p>
-					<p>
-						I produce content quickly and have a collaborative and iterative process
-						to ensure the content is always heading in the right direction.
-					</p>
-					<p>
-						I'll send you updates frequently so you're always aware of my progress and
-						will let you know ahead of time if there are unforeseen delays or issues.
-					</p>
-				</FAQ>
-				<FAQ title="How do you communicate with your clients?">
-					<p>
-						I communicate using whatever method and platform (e.g. Slack Connect)
-						works best for them.
-					</p>
-					<p>
-						I am flexible and responsive, and will reply to your messages and emails
-						as soon as possible.
-					</p>
-				</FAQ>
-				<FAQ title="How do you handle revisions and feedback?">
-					<p>
-						I don't tend to have set rules around the number of revisions and feedback
-						as I find good planning, communication of scope, and preparation ahead of
-						time negate the need for a large number of revisions.
-					</p>
-					<p>
-						My collaborative approach means we get to a final version relatively
-						quickly because I ensure we remain aligned on the content goals and vision
-						as the project progresses.
-					</p>
-					<p>
-						I want you to be really happy (not just satisfied), with the end result
-						will gladly accommodate your requests until the content is where it needs
-						to be.
-					</p>
-				</FAQ>
-				<FAQ title="How do you deliver your content?">
-					<p>
-						I deliver my content in whatever format best suits you. I tend to produce
-						the drafts in Google docs as it has superb tooling for collaborative
-						editing but can publish the content in your CMS or editorial tool of
-						choice.
-					</p>
-					<p>
-						At the conclusion of each project, I'll provide you with the source files,
-						images, videos, or any other assets that I used to create the content.
-					</p>
-				</FAQ>
-				<FAQ title="Does the content need to be attributed to you?">
-					<p>That's completely your choice!</p>
-					<p>
-						You can attach my name to blog posts or I can be used as a ghostwriter.
-					</p>
-				</FAQ>
-				<FAQ title="What are the benefits of working with you?">
-					<p>
-						I'm friendly and easy going, and will feel like a new member of your team.
-					</p>
-					<p>
-						I genuinely care about the impact my work has on your team and business,
-						and I will always go the extra mile to make sure you are satisfied and
-						happy with the content.
-					</p>
-				</FAQ>
-			</FAQList>
+				</div>
+				<FAQList title="FAQs">
+					<FAQ title="How do you charge for your services?">
+						<p>
+							I usually charge a set rate for projects and larger jobs with predefined
+							scope or an hourly rate for small one-off tasks.
+						</p>
+						<p>
+							In any case, you'll always receive a cost estimate up-front and I will
+							provide you with a detailed invoice for each project.
+						</p>
+					</FAQ>
+					<FAQ title="How long does it take to complete a project?">
+						<p>
+							The time frame for completion depends upon the scope and complexity of
+							work and how many other jobs are in the pipeline.
+						</p>
+						<p>
+							The more we work together and the greater understanding I have of your
+							product and services, the faster I can turn around work.
+						</p>
+						<p>
+							I produce content quickly and have a collaborative and iterative process
+							to ensure the content is always heading in the right direction.
+						</p>
+						<p>
+							I'll send you updates frequently so you're always aware of my progress and
+							will let you know ahead of time if there are unforeseen delays or issues.
+						</p>
+					</FAQ>
+					<FAQ title="How do you communicate with your clients?">
+						<p>
+							I communicate using whatever method and platform (e.g. Slack Connect)
+							works best for them.
+						</p>
+						<p>
+							I am flexible and responsive, and will reply to your messages and emails
+							as soon as possible.
+						</p>
+					</FAQ>
+					<FAQ title="How do you handle revisions and feedback?">
+						<p>
+							I don't tend to have set rules around the number of revisions and feedback
+							as I find good planning, communication of scope, and preparation ahead of
+							time negate the need for a large number of revisions.
+						</p>
+						<p>
+							My collaborative approach means we get to a final version relatively
+							quickly because I ensure we remain aligned on the content goals and vision
+							as the project progresses.
+						</p>
+						<p>
+							I want you to be really happy (not just satisfied), with the end result
+							will gladly accommodate your requests until the content is where it needs
+							to be.
+						</p>
+					</FAQ>
+					<FAQ title="How do you deliver your content?">
+						<p>
+							I deliver my content in whatever format best suits you. I tend to produce
+							the drafts in Google docs as it has superb tooling for collaborative
+							editing but can publish the content in your CMS or editorial tool of
+							choice.
+						</p>
+						<p>
+							At the conclusion of each project, I'll provide you with the source files,
+							images, videos, or any other assets that I used to create the content.
+						</p>
+					</FAQ>
+					<FAQ title="Does the content need to be attributed to you?">
+						<p>That's completely your choice!</p>
+						<p>
+							You can attach my name to blog posts or I can be used as a ghostwriter.
+						</p>
+					</FAQ>
+					<FAQ title="What are the benefits of working with you?">
+						<p>
+							I'm friendly and easy going, and will feel like a new member of your team.
+						</p>
+						<p>
+							I genuinely care about the impact my work has on your team and business,
+							and I will always go the extra mile to make sure you are satisfied and
+							happy with the content.
+						</p>
+					</FAQ>
+				</FAQList>
+			</div>
 		</section>
 
-		<section class="section">
-			<div class="cta-wrapper">
+		<section class="bg-gray-50 dark:bg-gray-900">
+			<div class="mx-auto max-w-screen-md px-4 pb-16 pt-4">
 				<CTA
 					title="Ready to take your content to the next level?"
 					cta="Book a Call"

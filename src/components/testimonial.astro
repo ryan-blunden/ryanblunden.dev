@@ -18,73 +18,15 @@ if (!avatar) {
 const src = (await avatar()).default;
 ---
 
-<li class="testimonial">
-	<blockquote class="quote">
+<figure class="flex h-full flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+	<blockquote class="text-base text-gray-700 dark:text-gray-300">
 		<slot />
 	</blockquote>
-	<div class="footer">
-		<Image class="avatar" height="96" width="96" {src} alt="" />
+	<figcaption class="mt-6 flex items-center gap-4">
+		<Image class="h-12 w-12 rounded-full" height="96" width="96" {src} alt="" />
 		<div>
-			<p class="name">{name}</p>
-			<span class="title">{title}</span>
+			<p class="text-base font-semibold text-gray-900 dark:text-white">{name}</p>
+			<p class="text-sm text-blue-600 dark:text-blue-400">{title}</p>
 		</div>
-	</div>
-</li>
-
-<style>
-	.testimonial {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5em;
-	}
-	@media (min-width: 50rem) {
-		.testimonial {
-			gap: 2em;
-		}
-	}
-	.quote {
-		position: relative;
-		padding-inline-start: 1.5em;
-	}
-	.quote::before {
-		position: absolute;
-		content: '';
-		inset-block: 0.5em;
-		inset-inline-start: 0;
-		border-inline-start: 1px solid var(--sl-color-text-accent);
-	}
-	.quote > :global(* + *) {
-		margin-top: 0.75em;
-	}
-
-	.footer {
-		display: flex;
-		gap: 1rem;
-		align-items: center;
-	}
-	.avatar {
-		--outline-color: rgba(255, 255, 255, 0.33);
-		outline: 1px solid var(--outline-color);
-		outline-offset: -1px;
-		border-radius: 99rem;
-		width: 4em;
-		height: 4em;
-	}
-	:global([data-theme='light']) .avatar {
-		--outline-color: rgba(23, 25, 30, 0.33);
-	}
-
-	.name {
-		font-weight: 600;
-		font-size: var(--sl-text-h4);
-		color: var(--sl-color-white);
-		line-height: var(--sl-line-height-headings);
-	}
-	.title {
-		text-underline-offset: 4px;
-		color: var(--sl-color-text-accent);
-	}
-	.title:hover {
-		color: var(--sl-color-white);
-	}
-</style>
+	</figcaption>
+</figure>

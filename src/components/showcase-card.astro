@@ -23,26 +23,11 @@ const src = (await thumbnail()).default;
 ---
 
 <MediaCard {href} {target}>
-	<Image slot="media" {src} alt="" width="560" />
-	<div class="meta sl-flex">
-		<p class="title">{title}</p>
-		{description && <p class="description" set:html={description} />}
+	<Image slot="media" class="h-full w-full object-cover" {src} alt="" width="560" />
+	<div class="space-y-2">
+		<p class="text-lg font-semibold text-gray-900 dark:text-white">{title}</p>
+		{description && (
+			<p class="text-sm text-gray-600 dark:text-gray-300" set:html={description} />
+		)}
 	</div>
 </MediaCard>
-
-<style>
-	.meta {
-		padding: 1rem;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-	.title {
-		/* padding: 0.75rem 1rem; */
-		font-size: var(--sl-text-lg);
-		/* text-underline: none; */
-	}
-	.description {
-		color: var(--sl-color-gray-3);
-		line-height: 1.5;
-	}
-</style>

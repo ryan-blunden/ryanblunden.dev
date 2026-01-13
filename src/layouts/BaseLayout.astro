@@ -7,7 +7,6 @@ interface Props {
 const { title, description } = Astro.props;
 
 import '../styles/tailwind.css';
-import '../styles/custom.css';
 ---
 
 <!doctype html>
@@ -19,7 +18,10 @@ import '../styles/custom.css';
 		<meta name="description" content={description} />
 		<meta property="og:image" content="https://ryanblunden.dev/og-image.jpg" />
 	</head>
-	<body>
+	<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
 		<slot />
+		<script is:inline type="module">
+			import 'flowbite';
+		</script>
 	</body>
 </html>

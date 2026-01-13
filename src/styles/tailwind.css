@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind typography;
+@import 'flowbite/src/themes/default';
 
 /*
 Add additional Tailwind styles to this file, for example with @layer:
