@@ -1,19 +1,21 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ryanblunden.dev',
-  integrations: [
-    tailwind(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push'],
-      },
-    }),
-  ],
-  redirects: {
-    '/call': 'https://calendly.com/ryan-blunden'
-  }
+	site: 'https://ryanblunden.dev',
+	integrations: [
+		partytown({
+			config: {
+				forward: ['dataLayer.push'],
+			},
+		}),
+	],
+	vite: {
+		plugins: [tailwindcss()],
+	},
+	redirects: {
+		'/call': 'https://calendly.com/ryan-blunden',
+	},
 });
