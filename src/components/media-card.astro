@@ -9,11 +9,11 @@ const El = href ? 'a' : 'span';
 
 <li class="flex">
 	<El
-		class="flex w-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+		class="lux-card lux-card-hover flex w-full flex-col overflow-hidden"
 		{href}
 		{target}
 	>
-		<div class="aspect-video overflow-hidden bg-gray-900">
+		<div class="aspect-video overflow-hidden bg-slate-950">
 			<slot name="media" />
 		</div>
 		<div class="flex flex-1 flex-col p-5">

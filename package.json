@@ -13,6 +13,7 @@
     "@astro-community/astro-embed-youtube": "^0.5.10",
     "@astrojs/check": "^0.9.6",
     "@astrojs/partytown": "^2.1.4",
+    "@calcom/embed-react": "^1.5.3",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.12",
     "flowbite": "^4.0.1",

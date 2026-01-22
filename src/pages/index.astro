@@ -17,50 +17,32 @@ const description =
   <GoogleAnalytics />
   <main class="pt-24">
     <header
-      class="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur dark:border-gray-800 dark:bg-gray-900/90"
+      class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur"
     >
       <div
         class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-6"
       >
-        <a class="text-lg font-semibold text-gray-900 dark:text-white" href="/"
-          >RyanBlunden.dev</a
-        >
+        <a class="text-lg font-semibold text-white" href="/">RyanBlunden.dev</a>
         <nav
-          class="hidden items-center gap-6 text-sm font-medium text-gray-500 dark:text-gray-400 md:flex"
+          class="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex"
         >
-          <a
-            class="transition hover:text-primary-700 dark:hover:text-primary-500"
-            href="#services">Services</a
-          >
-          <a
-            class="transition hover:text-primary-700 dark:hover:text-primary-500"
-            href="#my-work">Work</a
-          >
-          <a
-            class="transition hover:text-primary-700 dark:hover:text-primary-500"
-            href="#faqs">FAQs</a
-          >
+          <a class="transition hover:text-sky-200" href="#services">Services</a>
+          <a class="transition hover:text-sky-200" href="#my-work">Work</a>
+          <a class="transition hover:text-sky-200" href="#faqs">FAQs</a>
         </nav>
-        <a
-          class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-          href="https://calendly.com/ryan-blunden/"
-        >
+        <a class="lux-button" href="https://calendly.com/ryan-blunden/">
           Book a call
         </a>
       </div>
     </header>
 
-    <section class="bg-white dark:bg-gray-900">
-      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 pt-8">
+    <section class="lux-section">
+      <div class="mx-auto max-w-screen-xl px-4 pt-8">
         <div class="text-center motion-safe:animate-[rise_0.8s_ease-out]">
-          <h1
-            class="mt-5 text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-          >
+          <h1 class="lux-hero-title mt-5">
             Produce more video content without putting your engineers on camera
           </h1>
-          <p
-            class="mx-auto mt-4 max-w-3xl text-lg text-gray-500 md:text-lg lg:text-xl dark:text-gray-400"
-          >
+          <p class="lux-hero-subtitle mx-auto mt-4">
             Convert existing technical content into self-contained videos that
             drive developer engagement across your documentation, marketing
             site, and YouTube.
@@ -68,7 +50,7 @@ const description =
         </div>
         <div class="mt-10 sm:mt-12 lg:mt-16">
           <div
-            class="overflow-hidden rounded-lg border border-gray-200 bg-gray-900 shadow-xl dark:border-gray-700 motion-safe:animate-[rise_1s_ease-out]"
+            class="lux-card overflow-hidden motion-safe:animate-[rise_1s_ease-out]"
             style="animation-delay: 120ms;"
           >
             <iframe
@@ -94,104 +76,88 @@ const description =
       </div>
     </section>
 
-    <section class="bg-gray-50 dark:bg-gray-900">
-      <div class="mx-auto max-w-screen-xl px-4 py-12 lg:py-16">
+    <section class="lux-section border-t border-white/5" id="services">
+      <div class="mx-auto max-w-screen-xl px-4">
         <div class="mx-auto mb-10 max-w-2xl text-center">
-          <h2
-            class="mt-3 text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white"
-          >
-            Ship video faster
-          </h2>
-          <p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+          <h2 class="lux-section-title mt-3">Ship video faster</h2>
+          <p class="lux-section-lede mt-4">
             Streamline technical video using existing docs, blog posts, and
             demos. You bring the content — I handle production.
           </p>
         </div>
-        <div class="grid gap-8 sm:gap-12 md:grid-cols-3">
-          <div class="flex justify-center">
-            <svg
-              class="w-6 h-6 mr-3 text-primary-700 dark:text-primary-500 shrink-0"
-              fill="currentColor"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M20 10H4v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8ZM9 13v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"
-                clip-rule="evenodd"></path>
-              <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Z"
-              ></path>
-            </svg>
-
-            <div>
-              <h3
-                class="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white"
+        <div class="grid gap-8 sm:gap-10 md:grid-cols-3">
+          <div class="flex gap-4">
+            <div class="lux-icon-chip">
+              <svg
+                class="h-5 w-5"
+                fill="currentColor"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
+                <path
+                  fill-rule="evenodd"
+                  d="M20 10H4v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8ZM9 13v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"
+                  clip-rule="evenodd"></path>
+                <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Z"
+                ></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
                 Start with approved materials
               </h3>
-              <p class="text-gray-500 dark:text-gray-400">
+              <p class="text-slate-300">
                 Docs, demos, and internal guides become video without reopening
                 messaging debates.
               </p>
             </div>
           </div>
-          <div class="flex justify-center">
-            <svg
-              class="w-6 h-6 mr-3 text-primary-700 dark:text-primary-500 shrink-0"
-              fill="currentColor"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
-                clip-rule="evenodd"></path>
-            </svg>
-
-            <div>
-              <h3
-                class="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white"
+          <div class="flex gap-4">
+            <div class="lux-icon-chip">
+              <svg
+                class="h-5 w-5"
+                fill="currentColor"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
                 Minimal engineering input required
               </h3>
-              <p class="text-gray-500 dark:text-gray-400">
+              <p class="text-slate-300">
                 Existing assets remove the need for extensive engineering
                 involvement and review.
               </p>
             </div>
           </div>
-          <div class="flex justify-center">
-            <svg
-              class="w-6 h-6 mr-3 text-primary-700 dark:text-primary-500 shrink-0"
-              fill="currentColor"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M14 7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7Zm2 9.387 4.684 1.562A1 1 0 0 0 22 17V7a1 1 0 0 0-1.316-.949L16 7.613v8.774Z"
-                clip-rule="evenodd"></path>
-            </svg>
-
-            <div>
-              <h3
-                class="mb-1 text-lg font-semibold leading-tight text-gray-900 dark:text-white"
+          <div class="flex gap-4">
+            <div class="lux-icon-chip">
+              <svg
+                class="h-5 w-5"
+                fill="currentColor"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
+                <path
+                  fill-rule="evenodd"
+                  d="M14 7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7Zm2 9.387 4.684 1.562A1 1 0 0 0 22 17V7a1 1 0 0 0-1.316-.949L16 7.613v8.774Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
                 Consistently ship video content
               </h3>
-              <p class="text-gray-500 dark:text-gray-400">
+              <p class="text-slate-300">
                 Establish a repeatable motion that can evolve and scale using
                 internal resources.
               </p>
@@ -200,19 +166,15 @@ const description =
         </div>
       </div>
     </section>
-    <div
-      class="max-w-screen-xl px-4 py-8 mx-auto sm:py-16 lg:py-16 border-t border-gray-600"
-    >
+    <section class="lux-section border-t border-white/5">
       <div
-        class="grid items-center grid-cols-1 gap-12 xl:grid-cols-3 lg:gap-16"
+        class="mx-auto grid max-w-screen-xl grid-cols-1 items-center gap-12 px-4 lg:gap-16 xl:grid-cols-3"
       >
         <div class="space-y-4">
-          <h2
-            class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white"
-          >
+          <h2 class="lux-section-title">
             Why teams trust me to produce their technical videos
           </h2>
-          <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+          <p class="lux-section-lede">
             As a developer, former DevRel, and technical content creator, I
             produce video developers trust while reflecting well on your product
             and brand.
@@ -221,11 +183,9 @@ const description =
 
         <div class="grid grid-cols-1 gap-8 xl:col-span-2 sm:grid-cols-2">
           <div>
-            <div
-              class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900"
-            >
+            <div class="lux-icon-chip">
               <svg
-                class="w-8 h-8 text-primary-700 dark:text-primary-400"
+                class="h-5 w-5"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -242,21 +202,19 @@ const description =
                   d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-bold dark:text-white">
+            <h3 class="mt-5 text-xl font-semibold text-white">
               Developer fluency across the stack
             </h3>
-            <p class="mt-2 text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-slate-300">
               I’ve worked across development and DevOps, so I can quickly grasp
               most tools, workflows, and infrastructure patterns.
             </p>
           </div>
 
           <div>
-            <div
-              class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900"
-            >
+            <div class="lux-icon-chip">
               <svg
-                class="w-8 h-8 text-primary-700 dark:text-primary-400"
+                class="h-5 w-5"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -271,21 +229,19 @@ const description =
                   clip-rule="evenodd"></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-bold dark:text-white">
+            <h3 class="mt-5 text-xl font-semibold text-white">
               Minimal engineering involvement
             </h3>
-            <p class="mt-2 text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-slate-300">
               Most videos can be produced from existing content with minimal
               questions and a single technical review.
             </p>
           </div>
 
           <div>
-            <div
-              class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900"
-            >
+            <div class="lux-icon-chip">
               <svg
-                class="w-8 h-8 text-primary-700 dark:text-primary-400"
+                class="h-5 w-5"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -300,21 +256,19 @@ const description =
                   clip-rule="evenodd"></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-bold dark:text-white">
+            <h3 class="mt-5 text-xl font-semibold text-white">
               Async collaboration in any time zone
             </h3>
-            <p class="mt-2 text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-slate-300">
               Clear updates in Slack and async checkpoints keep things moving
               across time zones.
             </p>
           </div>
 
           <div>
-            <div
-              class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900"
-            >
+            <div class="lux-icon-chip">
               <svg
-                class="w-8 h-8 text-primary-700 dark:text-primary-400"
+                class="h-5 w-5"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -328,20 +282,20 @@ const description =
                 ></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-bold dark:text-white">
+            <h3 class="mt-5 text-xl font-semibold text-white">
               Deep product understanding
             </h3>
-            <p class="mt-2 text-gray-500 dark:text-gray-400">
+            <p class="mt-2 text-slate-300">
               I take the time to understand your product so I can present as if
               I was one of your team.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <section class="bg-gray-50 dark:bg-gray-900">
+  <section class="lux-section">
     <TestimonialGrid title="Testimonials">
       <Testimonial
         name="Maria Zahorcova"
@@ -396,15 +350,11 @@ const description =
     </TestimonialGrid>
   </section>
 
-  <section class="bg-gray-50 dark:bg-gray-900" id="my-work">
-    <div class="mx-auto max-w-screen-xl px-4 py-12">
+  <section class="lux-section" id="my-work">
+    <div class="mx-auto max-w-screen-xl px-4">
       <div class="mx-auto mb-10 text-center">
-        <h2
-          class="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white"
-        >
-          My Work
-        </h2>
-        <p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+        <h2 class="lux-section-title mt-3">My Work</h2>
+        <p class="lux-section-lede mt-4">
           A snapshot of developer enablement series, product demos, and launch
           videos.
         </p>
@@ -510,15 +460,11 @@ const description =
     </div>
   </section>
 
-  <section class="bg-white dark:bg-gray-900" id="faqs">
-    <div class="mx-auto max-w-screen-xl px-4 py-12">
+  <section class="lux-section" id="faqs">
+    <div class="mx-auto max-w-screen-xl px-4">
       <div class="mx-auto mb-10 max-w-2xl text-center">
-        <h2
-          class="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white"
-        >
-          FAQs
-        </h2>
-        <p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+        <h2 class="lux-section-title mt-3">FAQs</h2>
+        <p class="lux-section-lede mt-4">
           Answers to the questions teams ask before we kick off.
         </p>
       </div>
@@ -602,10 +548,8 @@ const description =
     </div>
   </section>
 
-  <section
-    class="border-t border-b border-gray-100 bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
-  >
-    <div class="mx-auto max-w-screen-xl px-4 py-12">
+  <section class="lux-section border-t border-white/5">
+    <div class="mx-auto max-w-screen-xl px-4">
       <CTA
         title="Ready to accelerate your technical video delivery?"
         cta="Schedule a call"
@@ -752,11 +696,9 @@ const description =
     </div>
   </section> -->
 
-  <footer
-    class="border-t border-gray-100 bg-white dark:border-gray-800 dark:bg-gray-900"
-  >
+  <footer class="border-t border-white/5 bg-slate-950/60">
     <div
-      class="mx-auto max-w-screen-xl px-4 py-6 text-center text-sm text-gray-500 dark:text-gray-400"
+      class="mx-auto max-w-screen-xl px-4 py-6 text-center text-sm text-slate-400"
     >
       © 2026 Ryan Blunden. All rights reserved.
     </div>
