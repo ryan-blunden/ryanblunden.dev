@@ -2,23 +2,23 @@
 
 :root {
 	color-scheme: dark;
-	--luxe-accent-hsl: 214, 70%, 60%;
-	--luxe-warm-hsl: 240, 30%, 40%;
-	--luxe-cool-hsl: 210, 35%, 40%;
-	--luxe-ink: hsl(220, 20%, 6%);
-	--luxe-ink-soft: hsl(220, 18%, 9%);
-	--luxe-surface: hsl(220, 16%, 11%);
-	--luxe-surface-strong: hsl(220, 14%, 15%);
-	--luxe-border: hsl(220, 14%, 22%);
-	--luxe-text: hsl(210, 16%, 78%);
-	--luxe-text-muted: hsl(210, 12%, 60%);
+	--luxe-accent-hsl: 220, 10%, 65%;
+	--luxe-warm-hsl: 0, 0%, 12%;
+	--luxe-cool-hsl: 220, 6%, 14%;
+	--luxe-ink: hsl(0, 0%, 4%);
+	--luxe-ink-soft: hsl(0, 0%, 6%);
+	--luxe-surface: hsl(0, 0%, 8%);
+	--luxe-surface-strong: hsl(0, 0%, 11%);
+	--luxe-border: hsl(0, 0%, 18%);
+	--luxe-text: hsl(0, 0%, 82%);
+	--luxe-text-muted: hsl(0, 0%, 62%);
 	--luxe-white: hsl(0, 0%, 98%);
-	--luxe-radius-sm: 0.6rem;
-	--luxe-radius-md: 1.1rem;
+	--luxe-radius-sm: 0.45rem;
+	--luxe-radius-md: 0.85rem;
 	--luxe-radius-pill: 999px;
-	--sl-color-accent-low: hsl(214, 45%, 20%);
-	--sl-color-accent: hsl(214, 70%, 60%);
-	--sl-color-accent-high: hsl(214, 85%, 78%);
+	--sl-color-accent-low: hsl(220, 10%, 20%);
+	--sl-color-accent: hsl(220, 12%, 60%);
+	--sl-color-accent-high: hsl(220, 14%, 76%);
 	--sl-color-bg: var(--luxe-ink);
 	--sl-color-bg-nav: hsla(220, 18%, 10%, 0.82);
 	--sl-color-bg-sidebar: hsla(220, 18%, 10%, 0.82);
@@ -29,7 +29,7 @@
 	--sl-color-gray-3: hsl(220, 10%, 60%);
 	--sl-color-white: var(--luxe-white);
 	--sl-color-text: var(--luxe-text);
-	--sl-color-text-accent: hsl(214, 70%, 70%);
+	--sl-color-text-accent: hsl(220, 12%, 70%);
 	--sl-line-height-headings: 1.16;
 	--sl-text-sm: 0.875rem;
 	--sl-text-base: 1rem;
@@ -49,9 +49,9 @@ body {
 	margin: 0;
 	font-family: 'Inter', 'SF Pro Text', system-ui, -apple-system, sans-serif;
 	background:
-		radial-gradient(circle at 12% -10%, hsla(var(--luxe-accent-hsl), 0.08), transparent 45%),
-		radial-gradient(circle at 85% 110%, hsla(var(--luxe-cool-hsl), 0.05), transparent 50%),
-		linear-gradient(180deg, hsla(220, 18%, 9%, 0.95), transparent 45%),
+		radial-gradient(circle at 12% -10%, hsla(var(--luxe-accent-hsl), 0.03), transparent 45%),
+		radial-gradient(circle at 85% 110%, hsla(var(--luxe-cool-hsl), 0.02), transparent 50%),
+		linear-gradient(180deg, hsla(0, 0%, 6%, 0.96), transparent 45%),
 		var(--sl-color-bg);
 	color: var(--sl-color-text);
 	line-height: 1.6;
@@ -76,9 +76,9 @@ a {
 	max-width: 1200px;
 	margin: 0 auto;
 	background:
-		radial-gradient(circle at -10% -10%, hsla(var(--luxe-accent-hsl), 0.06), transparent 55%),
-		radial-gradient(circle at 85% 115%, hsla(var(--luxe-cool-hsl), 0.04), transparent 60%),
-		linear-gradient(180deg, hsla(220, 18%, 9%, 0.95), transparent 42%),
+		radial-gradient(circle at -10% -10%, hsla(var(--luxe-accent-hsl), 0.02), transparent 55%),
+		radial-gradient(circle at 85% 115%, hsla(var(--luxe-cool-hsl), 0.015), transparent 60%),
+		linear-gradient(180deg, hsla(0, 0%, 6%, 0.96), transparent 42%),
 		var(--sl-color-bg);
 }
 
@@ -187,9 +187,9 @@ a {
 	border-radius: var(--luxe-radius-md);
 	overflow: hidden;
 	background:
-		radial-gradient(circle at top, hsla(var(--luxe-accent-hsl), 0.22), transparent 60%),
-		var(--luxe-ink-soft);
-	box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+		radial-gradient(circle at top, hsla(var(--luxe-accent-hsl), 0.08), transparent 60%),
+		hsl(0, 0%, 7%);
+	box-shadow: 0 26px 60px rgba(0, 0, 0, 0.48), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .hero-video iframe {
@@ -222,11 +222,11 @@ a {
 }
 
 .lux-hero-title {
-	font-size: clamp(2.8rem, 5vw, 4.8rem);
+	font-size: clamp(2.6rem, 4.6vw, 4.4rem);
 	line-height: 1.05;
 	letter-spacing: -0.03em;
 	color: var(--luxe-white);
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .lux-hero-subtitle {
@@ -239,11 +239,15 @@ a {
 	padding: clamp(3.5rem, 6vw, 6rem) 0;
 }
 
+.cal-embed {
+	min-height: clamp(38rem, 70vh, 52rem);
+}
+
 .lux-section-title {
-	font-size: clamp(2rem, 3.8vw, 3rem);
+	font-size: clamp(1.85rem, 3.2vw, 2.8rem);
 	line-height: 1.1;
 	color: var(--luxe-white);
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .lux-section-lede {
@@ -254,8 +258,8 @@ a {
 .lux-card {
 	border-radius: var(--luxe-radius-md);
 	border: 1px solid rgba(255, 255, 255, 0.08);
-	background: linear-gradient(150deg, rgba(20, 24, 36, 0.95), rgba(13, 17, 27, 0.75));
-	box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45);
+	background: rgba(12, 12, 12, 0.92);
+	box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
 .lux-card-hover {
@@ -271,33 +275,51 @@ a {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 2.25rem;
-	height: 2.25rem;
+	width: 2.5rem;
+	height: 2.5rem;
 	border-radius: 999px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	background: rgba(255, 255, 255, 0.02);
-	color: hsl(214, 55%, 72%);
+	color: hsl(220, 14%, 70%);
 }
 
 .lux-button {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: var(--luxe-radius-pill);
+	border-radius: 12px;
 	padding: 0.9rem 1.75rem;
 	font-weight: 600;
 	text-decoration: none;
 	background: linear-gradient(120deg, hsl(0, 0%, 98%), hsl(0, 0%, 90%));
 	color: #0a0f14;
-	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 	border: 1px solid transparent;
 }
 
 .lux-button.secondary {
 	background: rgba(255, 255, 255, 0.02);
 	color: rgba(255, 255, 255, 0.82);
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(8px);
+}
+
+.border-subtle {
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+.faq-content {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transform: translateY(-4px);
+	transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease;
+}
+
+.faq[open] .faq-content {
+	max-height: 600px;
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .card .icon {

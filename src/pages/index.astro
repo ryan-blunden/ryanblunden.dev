@@ -5,8 +5,8 @@ import TestimonialGrid from "../components/testimonial-grid.astro";
 import Testimonial from "../components/testimonial.astro";
 import FAQList from "../components/faq-list.astro";
 import FAQ from "../components/faq.astro";
-import CTA from "../components/cta.astro";
 import YouTubeGrid from "../components/youtube-grid.astro";
+import CalEmbed from "../components/cal-embed";
 
 const title = "Developer Enablement Video";
 const description =
@@ -17,22 +17,22 @@ const description =
   <GoogleAnalytics />
   <main class="pt-24">
     <header
-      class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur"
+      class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur"
     >
       <div
         class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-6"
       >
         <a class="text-lg font-semibold text-white" href="/">RyanBlunden.dev</a>
         <nav
-          class="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex"
+          class="hidden items-center gap-6 text-sm font-medium text-neutral-400 md:flex"
         >
-          <a class="transition hover:text-sky-200" href="#services">Services</a>
-          <a class="transition hover:text-sky-200" href="#my-work">Work</a>
-          <a class="transition hover:text-sky-200" href="#faqs">FAQs</a>
+          <a class="transition hover:text-neutral-200" href="#services"
+            >Services</a
+          >
+          <a class="transition hover:text-neutral-200" href="#my-work">Work</a>
+          <a class="transition hover:text-neutral-200" href="#faqs">FAQs</a>
         </nav>
-        <a class="lux-button" href="https://calendly.com/ryan-blunden/">
-          Book a call
-        </a>
+        <a class="lux-button" href="#schedule"> Book a call </a>
       </div>
     </header>
 
@@ -43,9 +43,9 @@ const description =
             Produce more video content without putting your engineers on camera
           </h1>
           <p class="lux-hero-subtitle mx-auto mt-4">
-            Convert existing technical content into self-contained videos that
-            drive developer engagement across your documentation, marketing
-            site, and YouTube.
+            I can convert your existing technical content into self-contained
+            videos that drive developer engagement across your documentation,
+            marketing site, and YouTube.
           </p>
         </div>
         <div class="mt-10 sm:mt-12 lg:mt-16">
@@ -79,7 +79,7 @@ const description =
     <section class="lux-section border-t border-white/5" id="services">
       <div class="mx-auto max-w-screen-xl px-4">
         <div class="mx-auto mb-10 max-w-2xl text-center">
-          <h2 class="lux-section-title mt-3">Ship video faster</h2>
+          <h2 class="lux-section-title mt-3">I help you ship video faster</h2>
           <p class="lux-section-lede mt-4">
             Streamline technical video using existing docs, blog posts, and
             demos. You bring the content — I handle production.
@@ -89,7 +89,7 @@ const description =
           <div class="flex gap-4">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ const description =
           <div class="flex gap-4">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +141,7 @@ const description =
           <div class="flex gap-4">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -182,10 +182,10 @@ const description =
         </div>
 
         <div class="grid grid-cols-1 gap-8 xl:col-span-2 sm:grid-cols-2">
-          <div>
+          <div class="lux-card border border-white/5 p-5">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +202,7 @@ const description =
                   d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-semibold text-white">
+            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
               Developer fluency across the stack
             </h3>
             <p class="mt-2 text-slate-300">
@@ -211,10 +211,10 @@ const description =
             </p>
           </div>
 
-          <div>
+          <div class="lux-card border border-white/5 p-5">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +229,7 @@ const description =
                   clip-rule="evenodd"></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-semibold text-white">
+            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
               Minimal engineering involvement
             </h3>
             <p class="mt-2 text-slate-300">
@@ -238,10 +238,10 @@ const description =
             </p>
           </div>
 
-          <div>
+          <div class="lux-card border border-white/5 p-5">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +256,7 @@ const description =
                   clip-rule="evenodd"></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-semibold text-white">
+            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
               Async collaboration in any time zone
             </h3>
             <p class="mt-2 text-slate-300">
@@ -265,10 +265,10 @@ const description =
             </p>
           </div>
 
-          <div>
+          <div class="lux-card border border-white/5 p-5">
             <div class="lux-icon-chip">
               <svg
-                class="h-5 w-5"
+                class="h-6 w-6"
                 fill="currentColor"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +282,7 @@ const description =
                 ></path>
               </svg>
             </div>
-            <h3 class="mt-5 text-xl font-semibold text-white">
+            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
               Deep product understanding
             </h3>
             <p class="mt-2 text-slate-300">
@@ -298,6 +298,15 @@ const description =
   <section class="lux-section">
     <TestimonialGrid title="Testimonials">
       <Testimonial
+        name="Nolan Di Mare Sullivan"
+        image="nolan"
+        title="Founding DevRel, Speakeasy"
+      >
+        When you have a technical product, it's very hard to find people who
+        know how to produce videos, and also can grok your problem space. Ryan
+        is one of the talented few who can do both!
+      </Testimonial>
+      <Testimonial
         name="Maria Zahorcova"
         image="maria"
         title="Chief Marketing Officer, Octomind"
@@ -307,15 +316,9 @@ const description =
         helps scale our content creation strategy—he writes pieces intriguing
         enough to get us on the front page of Hacker News.
       </Testimonial>
-      <Testimonial
-        name="Lindsay"
-        image="lindsay"
-        title="Sr. Digital Marketing Manager, Doppler"
-      >
-        Ryan did an exceptional job on our recent Doppler white paper. He has a
-        keen eye for condensing complex ideas into clear and concise points
-        while communicating his work every step of the way. The white paper is
-        informative, engaging, and a valuable asset to our team.
+      <Testimonial name="Brian Vallelunga" image="brian" title="CEO, Doppler">
+        Highly recommend Ryan! He produces incredibly high quality content and
+        really understands developers!
       </Testimonial>
       <Testimonial
         name="Yasmine Helmy"
@@ -343,20 +346,16 @@ const description =
         better understand and communicate container security in the DevOps
         language to our customers and to our colleagues.
       </Testimonial>
-      <Testimonial name="Brian Vallelunga" image="brian" title="CEO, Doppler">
-        Highly recommend Ryan! He produces incredibly high quality content and
-        really understands developers!
-      </Testimonial>
     </TestimonialGrid>
   </section>
 
   <section class="lux-section" id="my-work">
     <div class="mx-auto max-w-screen-xl px-4">
       <div class="mx-auto mb-10 text-center">
-        <h2 class="lux-section-title mt-3">My Work</h2>
+        <h2 class="lux-section-title mt-3">Recent Work</h2>
         <p class="lux-section-lede mt-4">
-          A snapshot of developer enablement series, product demos, and launch
-          videos.
+          A snapshot of publivly available recent work. More available upon
+          request.
         </p>
       </div>
       <YouTubeGrid
@@ -400,60 +399,10 @@ const description =
             description: "Publishing your SDK.",
           },
           {
-            href: "https://www.youtube.com/watch?v=qviAaoXbV9k",
-            title: "Bryntum YouTube Video Ad",
-            description: "Video ad for Bryntum's Scheduler web component.",
-          },
-          {
             href: "https://www.youtube.com/watch?v=RU8ZRswPb_s",
             title: "Doppler vs Traditional Secrets Managers",
             description:
               "Shows how Doppler differs from traditional secrets managers.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=GHAZNmvO5gY",
-            title: "Bryntum Home Page Video",
-            description:
-              "Promotional video showcasing Bryntum's web components.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=zLMEN9zuLJY",
-            title: "Bryntum Conference Booth Demo Video",
-            description:
-              "Looping video for Bryntum showcasing their web components.",
-          },
-          {
-            href: "https://youtu.be/PGy5xkzmTS0",
-            title: "Doppler Enterprise Demo",
-            description:
-              "Quick 5 minute video to showcase Doppler's enterprise capabilities.",
-          },
-          {
-            href: "https://youtu.be/-RamASjC-Ng",
-            title: "SecretOps Beginners Series | Part 1",
-            description:
-              "Part explainer (SecretOps) and how to get started with Doppler.",
-          },
-          {
-            href: "https://youtu.be/hc0ydmQVbcI",
-            title: "SecretOps Beginners Series | Part 2",
-            description: "Explains Doppler's Team Management features.",
-          },
-          {
-            href: "https://youtu.be/0aFCz-cFjLY",
-            title: "SecretOps Beginners Series | Part 3",
-            description: "Explains Doppler's secrets orchestration model.",
-          },
-          {
-            href: "https://youtu.be/Hdna-VLio2k",
-            title: "SecretOps Beginners Series | Part 4",
-            description: "Showcases Doppler's secrets management UI features.",
-          },
-          {
-            href: "https://youtu.be/U9q_J80El2Y",
-            title: "SecretOps Beginners Series | Part 5",
-            description:
-              "Doppler's database and API secrets rotation in action.",
           },
         ]}
       />
@@ -548,18 +497,23 @@ const description =
     </div>
   </section>
 
-  <section class="lux-section border-t border-white/5">
+  <section class="lux-section border-t border-white/5" id="schedule">
     <div class="mx-auto max-w-screen-xl px-4">
-      <CTA
-        title="Ready to accelerate your technical video delivery?"
-        cta="Schedule a call"
-        href="https://calendly.com/ryan-blunden"
-        target="_blank"
-        note=""
-      >
-        Book a 30 minute call to discuss the content you'd like to convert to
-        video.
-      </CTA>
+      <div class="mx-auto mb-10 text-center">
+        <h2 class="lux-section-title mt-3">Book time with me</h2>
+        <p class="lux-section-lede mt-4">
+          Pick a time that works for your team. We’ll cover goals, scope, and
+          timelines.
+        </p>
+      </div>
+      <div class="lux-card cal-embed min-h-[720px] w-full overflow-hidden">
+        <CalEmbed
+          client:only="react"
+          calLink="ryan-blunden-k9nqti/30min"
+          namespace="30min"
+          view="month_view"
+        />
+      </div>
     </div>
   </section>
 
