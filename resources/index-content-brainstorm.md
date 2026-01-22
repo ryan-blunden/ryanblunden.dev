@@ -22,13 +22,6 @@
 
 ---
 
-## [ WHY VIDEO MATTERS NOW ]
-
-| Evidence-based signals that video is now essential |
-| Focused on B2B, technical, and enablement outcomes |
-
----
-
 ## [ HOW IT WORKS ]
 
 | 1. You submit existing materials |
@@ -39,27 +32,10 @@
 
 ---
 
-## [ INPUTS vs OUTPUTS ]
-
-| Inputs: docs, demos, environments, POC |
-| Outputs: technical walkthrough videos |
-
----
-
 ## [ WHY ME ]
 
 | <DevRel + engineering credibility> |
 | <Why technical accuracy matters> |
-
----
-
-## [ WHEN THE STANDARD PROCESS ISN’T A FIT ]
-
-| You need strategic input beyond the defined video process |
-| You’re looking for consulting, coaching, or enablement support |
-| You want to explore higher-touch or custom engagement models |
-
-_These engagements are possible, but intentionally separate from the core, productized video offering._
 
 ---
 
@@ -74,11 +50,23 @@ _These engagements are possible, but intentionally separate from the core, produ
 | Short quotes from technical leaders and marketers |
 | Emphasis on credibility, speed, and low friction |
 
----
-
 ## [ FINAL CTA ]
 
 ## | Submit documentation + book setup call |
+
+--- OPTIONAL ---
+
+## [ WHY VIDEO MATTERS NOW ]
+
+| Evidence-based signals that video is now essential |
+| Focused on B2B, technical, and enablement outcomes |
+
+---
+
+## [ INPUTS vs OUTPUTS ]
+
+| Inputs: docs, demos, environments, POC |
+| Outputs: technical walkthrough videos |
 
 ---
 
