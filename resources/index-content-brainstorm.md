@@ -290,6 +290,9 @@ Placement guidance:
 - do you use a script and do we have control over messaging?
   I always use a script so the structure of the video is clear and we can collaborate on messaging and stick reasonably close to that script during delivery, which helps make it more natural and conversational, but I'll always preserve your specific product messaging.
 
+Can I use an AI voiceover instead of your Australian accent?
+Intervention straight up that having an Aussie on camera won't work for every company, but why it does work, is Australians no one for being no BS we're not flamboyant we're not overexcited and we stick to the facts and explain things plainly and I think that really that resonates with developers across all cultures. Something along these lines anyway..
+
 ## Intake & Qualification Flow (JotForm → Cal.com)
 
 The goal of the intake form is not lead capture, but context capture. It exists to ensure that calls are productive, specific, and mutually useful.
