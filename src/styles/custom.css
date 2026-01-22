@@ -236,7 +236,7 @@ a {
 }
 
 .lux-section {
-	padding: clamp(3.5rem, 6vw, 6rem) 0;
+	padding: clamp(3rem, 5vw, 5rem) 0;
 }
 
 .cal-embed {
@@ -306,6 +306,13 @@ a {
 
 .border-subtle {
 	border-color: rgba(255, 255, 255, 0.08);
+}
+
+.lux-figure {
+	background:
+		radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.06), transparent 45%),
+		linear-gradient(150deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
+	border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .faq-content {
