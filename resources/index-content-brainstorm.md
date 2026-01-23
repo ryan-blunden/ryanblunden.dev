@@ -84,7 +84,7 @@ This is not promotional video. It is technical content, produced so your team do
 
 **Approved hero positioning:**  
 Accelerate technical video content delivery without putting your engineers on camera.  
-I convert existing technical content into self-contained videos that drive developer engagement across your documentation, marketing site, and YouTube.
+I convert existing technical content into self-contained videos that drive engagement across your documentation, marketing site, and YouTube.
 
 ## Above-the-fold Video (DevRel Positioning)
 
