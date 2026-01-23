@@ -1,30 +1,30 @@
 ---
 interface Props {
-	title: string;
-	cta: string;
+  title: string;
+  cta: string;
   href: string;
   target?: string;
+  note?: string;
 }
 
-const { title, cta, href, target } = Astro.props;
+const { title, cta, href, target, note } = Astro.props;
 ---
 
-<div class="cta rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
-  <h3 class="text-center dark:text-white mt- text-base font-medium tracking-tight">{title}</h3>
-  <div class="text-center dark:text-white mt-2 text-lg"><slot/></div>
-	<div class="text-center">
-		<div class="cta-button inline-flex items-center text-lg justify-center font-medium px-5 py-3 mt-4 mb-1 no-underline text-base leading-6 text-white whitespace-no-wrap bg-blue-600 border border-blue-700 rounded-md">
-			<a {href} {target} class="no-underline">{cta}</a>
-		</div>
-	</div>
+<div class="mx-auto text-center">
+  <h2 class="lux-section-title mb-4">
+    {title}
+  </h2>
+  <p class="mb-6 text-base text-slate-300 md:text-lg">
+    <slot />
+  </p>
+  <div class="sm:flex items-center justify-center gap-3">
+    <a
+      {href}
+      {target}
+      class="lux-button w-full sm:w-auto"
+    >
+      {cta}
+    </a>
+  </div>
+  {note && <p class="mt-3 text-sm text-slate-400">{note}</p>}
 </div>
-
-<style>
-  .cta {
-    background-color: var(--sl-color-bg-nav);
-  }
-
-  .cta-button a, .cta-button a:hover {
-    color: #fff;
-  }
-</style>

@@ -1,40 +1,16 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
-<div class="testimonial-wrapper not-content" data-pagefind-ignore>
-	<h2 class="testimonial-grid-title">{title}</h2>
-	<ul class="testimonial-grid">
-		<slot />
-	</ul>
+<div class="mx-auto max-w-screen-xl px-4 py-12" data-pagefind-ignore>
+  <h2 class="lux-section-title mb-10 text-center">
+    {title}
+  </h2>
+  <div class="grid gap-6 md:grid-cols-2">
+    <slot />
+  </div>
 </div>
-
-<style>
-	.testimonial-wrapper {
-		margin-block: 4rem 2.5rem !important;
-		padding-bottom: 2rem;
-		font-size: clamp(var(--sl-text-sm), calc(0.5rem + 1vw), var(--sl-text-body));
-	}
-	.testimonial-grid-title {
-		text-align: center;
-		font-size: var(--sl-text-h2);
-		color: var(--sl-color-white);
-    line-height: var(--sl-line-height-headings);
-    font-weight: 600;
-	}
-	.testimonial-grid {
-		margin-top: 1.5rem;
-		display: grid;
-		gap: 5em;
-		padding-inline-start: 0;
-	}
-	@media (min-width: 50rem) {
-		.testimonial-grid {
-			grid-template-columns: 1fr 1fr;
-		}
-	}
-</style>

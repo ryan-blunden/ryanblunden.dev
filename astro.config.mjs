@@ -1,38 +1,23 @@
 import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
-import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
+import tailwindcss from '@tailwindcss/vite';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ryanblunden.dev',
-  integrations: [
-    starlight({
-      title: 'Ryan Blunden',
-      head: [{
-        tag: 'meta',
-        attrs: {
-          property: 'og:image',
-          content: 'https://ryanblunden.dev/og-image.jpg',
-        },
-      }],
-      social: {
-        linkedin: 'https://www.linkedin.com/in/ryanblunden/',
-        github: 'https://github.com/ryan-blunden',
-        email: 'mailto:ryan.blunden@gmail.com?subject=Enquiry+from+ryanblunden.dev',
-      },
-      customCss: ['./src/styles/tailwind.css', './src/styles/custom.css'],
-    }),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    partytown({
-      config: {
-        forward: ['dataLayer.push'],
-      },
-    }),
-  ],
-  redirects: {
-    '/call': 'https://calendly.com/ryan-blunden'
-  }
+	site: 'https://ryanblunden.dev',
+	integrations: [
+		react(),
+		partytown({
+			config: {
+				forward: ['dataLayer.push'],
+			},
+		}),
+	],
+	vite: {
+		plugins: [tailwindcss()],
+	},
+	redirects: {
+		'/call': 'https://calendly.com/ryan-blunden',
+	},
 });

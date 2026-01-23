@@ -1,9 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind typography;
+@import 'tailwindcss';
+@import 'flowbite/src/themes/default';
+@config '../../tailwind.config.mjs';
+@plugin 'flowbite/plugin';
+@source '../../node_modules/flowbite';
+@theme {
+	--font-sans: 'Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto',
+		'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-body: var(--font-sans);
+	--font-mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+		'Liberation Mono', 'Courier New', 'monospace';
 
-/*
-Add additional Tailwind styles to this file, for example with @layer:
-https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
-*/
+	--color-primary-50: #faf6f5;
+	--color-primary-100: #eef4ff;
+	--color-primary-200: #dbe7ff;
+	--color-primary-300: #b7cfff;
+	--color-primary-400: #8fb2ff;
+	--color-primary-500: #6c90ff;
+	--color-primary-600: #526cf5;
+	--color-primary-700: #4452d6;
+	--color-primary-800: #3843ad;
+	--color-primary-900: #2f3a86;
+	--color-primary-950: #1f2656;
+}
+@import './custom.css';
