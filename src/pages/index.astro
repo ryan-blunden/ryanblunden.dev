@@ -22,7 +22,7 @@ const description =
       class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur"
     >
       <div
-        class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-6"
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6"
       >
         <a class="text-lg font-semibold text-white" href="/">RyanBlunden.dev</a>
         <nav
@@ -39,29 +39,98 @@ const description =
     </header>
 
     <section class="lux-section lux-section--spacious">
-      <div class="mx-auto max-w-screen-xl px-4 pt-8">
-        <div class="text-center motion-safe:animate-[rise_0.8s_ease-out]">
-          <h1 class="lux-hero-title mt-5">
-            Produce more video content without putting your engineers on camera
+      <div class="mx-auto max-w-screen-xl px-4">
+        <div class="text-center">
+          <h1 class="lux-hero-title">
+            Ship more video content without putting your engineers on camera
           </h1>
           <p class="lux-hero-subtitle mx-auto mt-4">
-            I can convert your existing technical content into self-contained
-            videos that drive developer engagement across your documentation,
-            marketing site, and YouTube.
+            I convert existing technical content into self-contained videos that
+            drive engagement across your documentation, marketing site, and
+            YouTube.
           </p>
         </div>
         <div class="mt-10 sm:mt-12 lg:mt-16">
-          <div
-            class="lux-card overflow-hidden motion-safe:animate-[rise_1s_ease-out]"
-            style="animation-delay: 120ms;"
-          >
-            <iframe
-              class="aspect-video h-full w-full"
-              src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
-              title="Featured technical video"
-              loading="eager"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
+          <p class="text-center mb-5 lux-kicker text-base">Sample videos</p>
+          <div class="mb-5">
+            <div class="sm:hidden">
+              <label for="sample-video-tabs" class="sr-only">
+                Select a sample video category
+              </label>
+              <select
+                id="sample-video-tabs"
+                class="sample-select block w-full px-3 py-2.5 text-sm focus:outline-none"
+              >
+                <option value="educational-panel">Educational</option>
+                <option value="tutorial-panel">Tutorial</option>
+              </select>
+            </div>
+            <ul
+              class="sample-tabs hidden text-sm font-medium text-center sm:flex -space-x-px justify-center max-w-md mx-auto"
+              id="sample-videos-tabs"
+              role="tablist"
+            >
+              <li class="w-full focus-within:z-10" role="presentation">
+                <button
+                  class="sample-tab is-active inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-s-base hover:cursor-pointer"
+                  id="educational-tab"
+                  data-sample-tab="educational-panel"
+                  type="button"
+                  role="tab"
+                  aria-controls="educational-panel"
+                  aria-selected="true"
+                >
+                  Educational
+                </button>
+              </li>
+              <li class="w-full focus-within:z-10" role="presentation">
+                <button
+                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-e-base hover:cursor-pointer"
+                  id="tutorial-tab"
+                  data-sample-tab="tutorial-panel"
+                  type="button"
+                  role="tab"
+                  aria-controls="tutorial-panel"
+                  aria-selected="false"
+                >
+                  Tutorial
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div id="sample-videos-tabs-content">
+            <div
+              class="lux-card overflow-hidden"
+              style="animation-delay: 120ms;"
+              id="educational-panel"
+              data-sample-panel="educational-panel"
+              role="tabpanel"
+              aria-labelledby="educational-tab"
+            >
+              <iframe
+                class="aspect-video h-full w-full"
+                src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
+                title="Educational sample video"
+                loading="eager"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div
+              class="hidden lux-card overflow-hidden"
+              style="animation-delay: 120ms;"
+              id="tutorial-panel"
+              data-sample-panel="tutorial-panel"
+              role="tabpanel"
+              aria-labelledby="tutorial-tab"
+            >
+              <iframe
+                class="aspect-video h-full w-full"
+                src="https://www.youtube.com/embed/3ti4NZgRonA?rel=0"
+                title="Tutorial sample video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
           </div>
         </div>
 
@@ -78,14 +147,47 @@ const description =
       </div>
     </section>
 
+    <script is:inline>
+      const tabs = Array.from(document.querySelectorAll("[data-sample-tab]"));
+      const panels = Array.from(
+        document.querySelectorAll("[data-sample-panel]"),
+      );
+      const select = document.getElementById("sample-video-tabs");
+
+      const setActiveTab = (panelId) => {
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.sampleTab === panelId;
+          tab.classList.toggle("is-active", isActive);
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        panels.forEach((panel) => {
+          panel.classList.toggle("hidden", panel.id !== panelId);
+        });
+        if (select) {
+          select.value = panelId;
+        }
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          setActiveTab(tab.dataset.sampleTab);
+        });
+      });
+
+      if (select) {
+        select.addEventListener("change", (event) => {
+          setActiveTab(event.target.value);
+        });
+      }
+    </script>
+
     <section class="lux-section lux-section--spacious border-t border-white/5">
       <div class="mx-auto max-w-screen-xl px-4">
         <div class="mx-auto mb-10 max-w-3xl text-center">
           <h2 class="lux-section-title mt-4">Why video is crucial in 2026</h2>
           <p class="lux-section-lede mt-4">
             Developers want to see the full workflow, not just read about it.
-            Video shows the product in action and makes the experience
-            believable.
+            Video shows the product in action and turns capability into trust.
           </p>
         </div>
 
@@ -95,23 +197,33 @@ const description =
               class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
             >
               <svg
-                class="w-10 h-10 text-white/80"
+                class="w-10 h-10 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
                 fill="currentColor"
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
               >
-                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              Developers learn by watching
+              Users spend more time on pages
             </h3>
             <p class="mx-auto mb-3 max-w-md text-sm text-slate-300">
-              60% of developers use how‑to videos to learn, and 49% use video
-              courses.
+              Pages with embedded videos see average session durations 2.6x
+              longer than text-only pages
             </p>
             <p class="text-xs text-slate-500">
-              Stack Overflow Developer Survey 2023
+              <a
+                href="https://draft.dev/learn/how-video-marketing-improves-seo"
+                class="text-slate-400 hover:text-slate-300 underline"
+                >Draft.dev</a
+              >
             </p>
           </div>
 
@@ -133,13 +245,19 @@ const description =
               </svg>
             </div>
             <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              Instructional video retains attention
+              Google search and AI summaries are multimodal
             </h3>
             <p class="mx-auto mb-3 max-w-md text-sm text-slate-300">
-              3–5 minute instructional videos average 74% engagement, far higher
-              than typical videos.
+              Google now understands pages as more than text—combining written
+              content, video understanding, and structured metadata.
             </p>
-            <p class="text-xs text-slate-500">Wistia State of Video Report</p>
+            <p class="text-xs text-slate-500">
+              <a
+                href="https://developers.google.com/search/docs/appearance/multimedia-content/video"
+                class="text-slate-400 hover:text-slate-300 underline"
+                >Google search central documentation</a
+              >
+            </p>
           </div>
 
           <div class="mt-8 md:mt-10 md:pr-8">
@@ -147,22 +265,30 @@ const description =
               class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
             >
               <svg
-                class="w-10 h-10 text-white/80"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+                class="w-10 h-10 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
               >
                 <path
-                  fill-rule="evenodd"
-                  d="M10 2a4 4 0 0 0-4 4v2a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Zm-5 9a2 2 0 0 1 2 2v1a3 3 0 0 0 6 0v-1a2 2 0 1 1 4 0v1a7 7 0 0 1-14 0v-1a2 2 0 0 1 2-2Z"
-                  clip-rule="evenodd"></path>
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 17.345a4.76 4.76 0 0 0 2.558 1.618c2.274.589 4.512-.446 4.999-2.31.487-1.866-1.273-3.9-3.546-4.49-2.273-.59-4.034-2.623-3.547-4.488.486-1.865 2.724-2.899 4.998-2.31.982.236 1.87.793 2.538 1.592m-3.879 12.171V21m0-18v2.2"
+                ></path>
               </svg>
             </div>
             <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              Buyers want self‑serve proof
+              Videos boost lead generation
             </h3>
             <p class="mx-auto mb-3 max-w-md text-sm text-slate-300">
-              61% of B2B buyers prefer a rep‑free experience, so video is the
-              most credible self‑serve demo.
+              Companies that incorporate video into their marketing see an
+              average 38% higher lead generation rate than those relying on text
+              alone.
             </p>
             <p class="text-xs text-slate-500">Gartner B2B Buying Survey 2025</p>
           </div>
@@ -172,14 +298,21 @@ const description =
               class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
             >
               <svg
-                class="w-10 h-10 text-white/80"
+                class="w-10 h-10 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
                 fill="currentColor"
-                viewBox="0 0 20 20"
+                viewBox="0 0 24 24"
               >
                 <path
                   fill-rule="evenodd"
-                  d="M2 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4l-2 3-2-3H4a2 2 0 0 1-2-2V5Z"
+                  d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
                   clip-rule="evenodd"></path>
+                <path
+                  d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z"
+                ></path>
               </svg>
             </div>
             <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
@@ -217,8 +350,10 @@ const description =
           <div class="text-center sm:text-left">
             <h2 class="lux-section-title mt-1">I help you ship video faster</h2>
             <p class="lux-section-lede mt-4">
-              Streamline technical video using existing docs, blog posts, and
-              demos. You bring the content — I handle production.
+              <strong>Working with me is simple</strong>. You provide the source
+              material—I handle everything else: scripting, filming, screen
+              recording, and editing, with minimal involvement required from
+              your team or engineers.
             </p>
           </div>
         </div>
@@ -292,11 +427,11 @@ const description =
             </div>
             <div>
               <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
-                Consistently ship video content
+                Ship video content consistently
               </h3>
               <p class="text-slate-300">
-                Establish a repeatable motion that can evolve and scale using
-                internal resources.
+                Establish a repeatable production system that can evolve and
+                scale with internal resources.
               </p>
             </div>
           </div>
@@ -305,14 +440,14 @@ const description =
     </section>
     <section class="lux-section border-t border-white/5">
       <div class="mx-auto max-w-screen-xl px-4">
-        <div class="mx-auto mb-12 max-w-3xl text-center">
+        <div class="mx-auto mb-12 max-w-4xl text-center">
           <h2 class="lux-section-title">
-            Why teams trust me to produce their technical videos
+            Why teams trust me with producing their technical videos
           </h2>
           <p class="lux-section-lede mt-4">
-            As a developer, former DevRel, and technical content creator, I
-            produce video developers trust while reflecting well on your product
-            and brand.
+            Here's how my experience, skills, and approach allow me to produce
+            technically accurate videos that build trust with developers—and
+            confidence in your brand and products.
           </p>
         </div>
 
@@ -338,7 +473,7 @@ const description =
               </svg>
             </div>
             <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Full-stack and DevOps background
+              Full-stack + DevOps background
             </h3>
             <p class="mt-2 text-slate-300">
               I’ve worked across development and DevOps, so I can quickly grasp
@@ -365,7 +500,7 @@ const description =
               </svg>
             </div>
             <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Minimal engineering involvement
+              Low-touch engineering involvement
             </h3>
             <p class="mt-2 text-slate-300">
               Most videos can be produced from existing content with minimal
@@ -392,11 +527,11 @@ const description =
               </svg>
             </div>
             <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Async collaboration in any time zone
+              Developers can tell I'm one of them
             </h3>
             <p class="mt-2 text-slate-300">
-              Clear updates in Slack and async checkpoints keep things moving
-              across time zones.
+              I don't market your product — I show it in action, using language
+              and pacing that resonate with developer audiences.
             </p>
           </div>
 
@@ -421,8 +556,58 @@ const description =
               Deep product understanding
             </h3>
             <p class="mt-2 text-slate-300">
-              I take the time to understand your product so I can present as if
-              I was one of your team.
+              I take the time to understand your product and present it with the
+              clarity and accuracy you'd expect from your own DevRel team.
+            </p>
+          </div>
+          <div class="lux-card border border-white/5 p-5">
+            <div class="lux-icon-tile">
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+              Creator‑grade video
+            </h3>
+            <p class="mt-2 text-slate-300">
+              I produce videos with the clarity, pacing, and conversational
+              style developers expect from top creators.
+            </p>
+          </div>
+          <div class="lux-card border border-white/5 p-5">
+            <div class="lux-icon-tile">
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+              Video with your brand voice and tone
+            </h3>
+            <p class="mt-2 text-slate-300">
+              I blend my conversational style with your brand voice and
+              messaging, so your product is represented accurately.
             </p>
           </div>
         </div>
@@ -489,7 +674,7 @@ const description =
       <div class="mx-auto mb-10 text-center">
         <h2 class="lux-section-title mt-3">Recent Work</h2>
         <p class="lux-section-lede mt-4">
-          A snapshot of publivly available recent work. More available upon
+          A snapshot of publicly available recent work. More available upon
           request.
         </p>
       </div>
@@ -545,7 +730,7 @@ const description =
   </section>
 
   <section class="lux-section" id="faqs">
-    <div class="mx-auto max-w-screen-xl px-4">
+    <div class="mx-auto max-w-7xl px-4">
       <div class="mx-auto mb-10 max-w-2xl text-center">
         <h2 class="lux-section-title mt-3">FAQs</h2>
         <p class="lux-section-lede mt-4">

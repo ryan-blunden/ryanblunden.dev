@@ -45,8 +45,9 @@ import '../styles/tailwind.css';
 	</head>
 	<body class="bg-neutral-950 font-sans text-neutral-100 antialiased">
 		<slot />
-		<script is:inline type="module">
-			import 'flowbite';
-		</script>
+		<script
+			type="module"
+			src={new URL('../scripts/flowbite.ts', import.meta.url).href}
+		></script>
 	</body>
 </html>
