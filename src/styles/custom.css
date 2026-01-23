@@ -296,27 +296,6 @@ a {
 	flex: 0 0 auto;
 }
 
-.lux-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 12px;
-	padding: 0.9rem 1.75rem;
-	font-weight: 600;
-	text-decoration: none;
-	background: linear-gradient(120deg, hsl(0, 0%, 98%), hsl(0, 0%, 90%));
-	color: #0a0f14;
-	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-	border: 1px solid transparent;
-}
-
-.lux-button.secondary {
-	background: rgba(255, 255, 255, 0.02);
-	color: rgba(255, 255, 255, 0.82);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(8px);
-}
-
 .sample-tabs .sample-tab {
 	background: rgba(255, 255, 255, 0.03);
 	color: var(--luxe-text-muted);
