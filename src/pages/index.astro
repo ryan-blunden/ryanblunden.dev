@@ -69,6 +69,7 @@ const description =
               >
                 <option value="educational-panel">Educational</option>
                 <option value="tutorial-panel">Tutorial</option>
+                <option value="blended-panel">Blended</option>
               </select>
             </div>
             <ul
@@ -91,7 +92,7 @@ const description =
               </li>
               <li class="w-full focus-within:z-10" role="presentation">
                 <button
-                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-e-base hover:cursor-pointer"
+                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none hover:cursor-pointer"
                   id="tutorial-tab"
                   data-sample-tab="tutorial-panel"
                   type="button"
@@ -100,6 +101,19 @@ const description =
                   aria-selected="false"
                 >
                   Tutorial
+                </button>
+              </li>
+              <li class="w-full focus-within:z-10" role="presentation">
+                <button
+                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-e-base hover:cursor-pointer"
+                  id="blended-tab"
+                  data-sample-tab="blended-panel"
+                  type="button"
+                  role="tab"
+                  aria-controls="blended-panel"
+                  aria-selected="false"
+                >
+                  Blended
                 </button>
               </li>
             </ul>
@@ -115,7 +129,7 @@ const description =
             >
               <iframe
                 class="aspect-video h-full w-full"
-                src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0"
+                src="https://www.youtube.com/embed/eg1pYK1nTEU?rel=0&modestbranding=1"
                 title="Educational sample video"
                 loading="eager"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -131,7 +145,23 @@ const description =
             >
               <iframe
                 class="aspect-video h-full w-full"
-                src="https://www.youtube.com/embed/3ti4NZgRonA?rel=0"
+                src="https://www.youtube.com/embed/3ti4NZgRonA?rel=0&modestbranding=1"
+                title="Tutorial sample video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div
+              class="hidden lux-card overflow-hidden"
+              style="animation-delay: 120ms;"
+              id="blended-panel"
+              data-sample-panel="blended-panel"
+              role="tabpanel"
+              aria-labelledby="blended-tab"
+            >
+              <iframe
+                class="aspect-video h-full w-full"
+                src="https://www.youtube.com/embed/ZHYK0m9rpB0?rel=0&modestbranding=1"
                 title="Tutorial sample video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -702,45 +732,57 @@ const description =
         videos={[
           {
             href: "https://www.youtube.com/watch?v=ZHYK0m9rpB0",
-            title: "Experiment, Test, and Create an MCP Server",
+            title: "Experiment, test, and create an MCP server",
             description:
               "Learn how to roll out your own MCP server using an OpenAPI spec and the Speakeasy CLI.",
           },
           {
+            href: "https://www.youtube.com/watch?v=eg1pYK1nTEU",
+            title:
+              "Securely running AI coding agents in enterprise environments",
+            description:
+              "Exploring the risks of using AI coding agents on local laptops vs. cloud development environments.",
+          },
+          {
             href: "https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s",
-            title: "Generating a Terraform Provider from an API Spec | Part I",
+            title: "Generating a Terraform provider from an API spec | Part I",
             description:
               "Create a Terraform provider using the Speakeasy CLI and OpenAPI spec.",
           },
           {
             href: "https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s",
-            title: "Generating a Terraform Provider from an API Spec | Part II",
+            title: "Generating a Terraform provider from an API spec | Part II",
             description:
               "Publish the Terraform provider to the Terraform Registry.",
           },
           {
+            href: "https://www.youtube.com/watch?v=L7WrsaV8GsU",
+            title: "Doppler KubeCon 2025 booth loop",
+            description: "Looping booth video developed for KubeCon.",
+          },
+          {
             href: "https://www.youtube.com/watch?v=Ef5QdrmCOs8",
-            title: "Speakeasy Getting Started Series | Part 1",
+            title: "Speakeasy getting started series | Part 1",
             description: "Optimizing your OpenAPI spec.",
           },
           {
             href: "https://www.youtube.com/watch?v=BphVOeWODEY",
-            title: "Speakeasy Getting Started Series | Part 2",
+            title: "Speakeasy getting started series | Part 2",
             description: "Generating your first SDK.",
           },
           {
             href: "https://www.youtube.com/watch?v=RmpgVIFzed4",
-            title: "Speakeasy Getting Started Series | Part 3",
+            title: "Speakeasy getting started series | Part 3",
             description: "CI/CD Configuration",
           },
           {
             href: "https://www.youtube.com/watch?v=i9XWzZnDikA",
-            title: "Speakeasy Getting Started Series | Part 4",
+            title: "Speakeasy getting started series | Part 4",
             description: "Publishing your SDK.",
           },
           {
             href: "https://www.youtube.com/watch?v=RU8ZRswPb_s",
-            title: "Doppler vs Traditional Secrets Managers",
+            title: "Doppler vs traditional secrets managers",
             description:
               "Shows how Doppler differs from traditional secrets managers.",
           },

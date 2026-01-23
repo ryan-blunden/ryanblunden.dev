@@ -11,7 +11,13 @@ const { href, title, description } = Astro.props;
 ---
 
 <MediaCard>
-	<YouTube slot="media" class="h-full w-full" id={href} posterQuality='max' />
+	<YouTube
+		slot="media"
+		class="h-full w-full"
+		id={href}
+		posterQuality="max"
+		params="rel=0&modestbranding=1"
+	/>
 	<div class="space-y-2">
 		<p class="text-lg font-semibold text-white">{title}</p>
 		{description && (

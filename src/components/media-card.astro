@@ -13,7 +13,7 @@ const El = href ? 'a' : 'span';
 		{href}
 		{target}
 	>
-		<div class="aspect-video overflow-hidden bg-slate-950">
+		<div class="aspect-video overflow-hidden bg-slate-950 [&_lite-youtube]:h-full [&_lite-youtube]:w-full">
 			<slot name="media" />
 		</div>
 		<div class="flex flex-1 flex-col p-5">
