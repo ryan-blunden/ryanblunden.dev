@@ -18,7 +18,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   redirects: {
-    "/call": "http://cal.com/ryan-blunden",
+    "/call": "http://cal.com/ryan-blunden-dev",
   },
   devToolbar: {
     enabled: false,
