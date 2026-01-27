@@ -18,7 +18,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   redirects: {
-    "/call": "https://calendly.com/ryan-blunden",
+    "/call": "http://cal.com/ryan-blunden",
   },
   devToolbar: {
     enabled: false,
