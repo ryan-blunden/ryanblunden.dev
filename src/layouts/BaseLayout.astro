@@ -6,7 +6,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 
-import "../styles/tailwind.css";
+import GoogleAnalytics from '../components/google-analytics.astro';
+import '../styles/tailwind.css';
 ---
 
 <!doctype html>
@@ -29,6 +30,7 @@ import "../styles/tailwind.css";
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0a0a0a" />
+    <GoogleAnalytics />
     <style is:inline>
       :root {
         font-synthesis-weight: none;
