@@ -70,41 +70,28 @@ const description =
             >
               <li class="w-full focus-within:z-10" role="presentation">
                 <button
-                  class="sample-tab is-active inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-s-base hover:cursor-pointer"
-                  id="educational-tab"
-                  data-sample-tab="educational-panel"
-                  type="button"
-                  role="tab"
-                  aria-controls="educational-panel"
-                  aria-selected="true"
-                >
-                  Educational
-                </button>
-              </li>
-              <li class="w-full focus-within:z-10" role="presentation">
-                <button
-                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none hover:cursor-pointer"
+                  class="sample-tab is-active inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none hover:cursor-pointer"
                   id="tutorial-tab"
                   data-sample-tab="tutorial-panel"
                   type="button"
                   role="tab"
                   aria-controls="tutorial-panel"
-                  aria-selected="false"
+                  aria-selected="true"
                 >
                   Tutorial
                 </button>
               </li>
               <li class="w-full focus-within:z-10" role="presentation">
                 <button
-                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-e-base hover:cursor-pointer"
-                  id="blended-tab"
-                  data-sample-tab="blended-panel"
+                  class="sample-tab inline-block w-full font-medium leading-5 text-sm px-4 py-2.5 focus:outline-none rounded-s-base hover:cursor-pointer"
+                  id="educational-tab"
+                  data-sample-tab="educational-panel"
                   type="button"
                   role="tab"
-                  aria-controls="blended-panel"
+                  aria-controls="educational-panel"
                   aria-selected="false"
                 >
-                  Blended
+                  Educational
                 </button>
               </li>
             </ul>
@@ -112,22 +99,6 @@ const description =
           <div id="sample-videos-tabs-content">
             <div
               class="lux-card overflow-hidden"
-              style="animation-delay: 120ms;"
-              id="educational-panel"
-              data-sample-panel="educational-panel"
-              role="tabpanel"
-              aria-labelledby="educational-tab"
-            >
-              <iframe
-                class="aspect-video h-full w-full"
-                src="https://www.youtube.com/embed/eg1pYK1nTEU?rel=0&modestbranding=1"
-                title="Educational sample video"
-                loading="eager"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div>
-            <div
-              class="hidden lux-card overflow-hidden"
               style="animation-delay: 120ms;"
               id="tutorial-panel"
               data-sample-panel="tutorial-panel"
@@ -143,12 +114,12 @@ const description =
                 allowfullscreen></iframe>
             </div>
             <div
-              class="hidden lux-card overflow-hidden"
+              class="lux-card overflow-hidden hidden"
               style="animation-delay: 120ms;"
-              id="blended-panel"
-              data-sample-panel="blended-panel"
+              id="educational-panel"
+              data-sample-panel="educational-panel"
               role="tabpanel"
-              aria-labelledby="blended-tab"
+              aria-labelledby="educational-tab"
             >
               <iframe
                 class="aspect-video h-full w-full"
@@ -159,806 +130,814 @@ const description =
                 allowfullscreen></iframe>
             </div>
           </div>
-        </div>
 
-        <div
-          class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
-        >
-          <!-- <p
+          <div
+            class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+          >
+            <!-- <p
             class="mx-auto text-center max-w-3xl text-lg text-gray-500 md:text-lg lg:text-xl dark:text-gray-400"
           >
             Leverage the technical assets you already have into videos that
             accelerate developer onboarding, enablement, and activation.
           </p> -->
+          </div>
         </div>
       </div>
-    </section>
 
-    <script is:inline>
-      const tabs = Array.from(document.querySelectorAll("[data-sample-tab]"));
-      const panels = Array.from(
-        document.querySelectorAll("[data-sample-panel]"),
-      );
-      const select = document.getElementById("sample-video-tabs");
+      <script is:inline>
+        const tabs = Array.from(document.querySelectorAll("[data-sample-tab]"));
+        const panels = Array.from(
+          document.querySelectorAll("[data-sample-panel]"),
+        );
+        const select = document.getElementById("sample-video-tabs");
 
-      const setActiveTab = (panelId) => {
+        const setActiveTab = (panelId) => {
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.sampleTab === panelId;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+          panels.forEach((panel) => {
+            panel.classList.toggle("hidden", panel.id !== panelId);
+          });
+          if (select) {
+            select.value = panelId;
+          }
+        };
+
         tabs.forEach((tab) => {
-          const isActive = tab.dataset.sampleTab === panelId;
-          tab.classList.toggle("is-active", isActive);
-          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          tab.addEventListener("click", () => {
+            setActiveTab(tab.dataset.sampleTab);
+          });
         });
-        panels.forEach((panel) => {
-          panel.classList.toggle("hidden", panel.id !== panelId);
-        });
+
         if (select) {
-          select.value = panelId;
+          select.addEventListener("change", (event) => {
+            setActiveTab(event.target.value);
+          });
         }
-      };
+      </script>
 
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          setActiveTab(tab.dataset.sampleTab);
-        });
-      });
-
-      if (select) {
-        select.addEventListener("change", (event) => {
-          setActiveTab(event.target.value);
-        });
-      }
-    </script>
-
-    <section class="lux-section lux-section--spacious border-t border-white/5">
-      <div class="mx-auto max-w-screen-xl px-4">
-        <div class="mx-auto mb-10 max-w-3xl text-center">
-          <h2 class="lux-section-title mt-4">Why video is crucial in 2026</h2>
-          <p class="lux-section-lede mt-4">
-            Developers want to see the full workflow, not just read about it.
-            <br />
-            Video builds trust by showing the product in action and the value it delivers.
-          </p>
-        </div>
-
-        <div class="text-center md:grid md:grid-cols-2">
-          <div class="md:pr-8 pb-8 md:pb-10">
-            <div
-              class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
-            >
-              <svg
-                class="w-10 h-10 text-white/80"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm1-11a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l2.5 2.5a1 1 0 0 0 1.414-1.414L11 10.586V7Z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              Video increases page dwell time
-            </h3>
-            <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
-              Embedded videos increase average session duration by 2.6x compared
-              to text-only pages.
+      <section
+        class="lux-section lux-section--spacious border-t border-white/5"
+      >
+        <div class="mx-auto max-w-screen-xl px-4">
+          <div class="mx-auto mb-10 max-w-3xl text-center">
+            <h2 class="lux-section-title mt-4">Why video is crucial in 2026</h2>
+            <p class="lux-section-lede mt-4">
+              Developers want to see the full workflow, not just read about it.
+              <br />
+              Video builds trust by showing the product in action and the value it
+              delivers.
             </p>
-            <p class="text-xs text-slate-500">
-              <a
-                href="https://draft.dev/learn/how-video-marketing-improves-seo"
-                class="text-slate-400 hover:text-slate-300 underline"
-                target="_blank"
-                rel="noreferrer">Draft.dev</a
+          </div>
+
+          <div class="text-center md:grid md:grid-cols-2">
+            <div class="md:pr-8 pb-8 md:pb-10">
+              <div
+                class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
               >
+                <svg
+                  class="w-10 h-10 text-white/80"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm1-11a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l2.5 2.5a1 1 0 0 0 1.414-1.414L11 10.586V7Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
+                Video increases page dwell time
+              </h3>
+              <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
+                Embedded videos increase average session duration by 2.6x
+                compared to text-only pages.
+              </p>
+              <p class="text-xs text-slate-500">
+                <a
+                  href="https://draft.dev/learn/how-video-marketing-improves-seo"
+                  class="text-slate-400 hover:text-slate-300 underline"
+                  target="_blank"
+                  rel="noreferrer">Draft.dev</a
+                >
+              </p>
+            </div>
+
+            <div
+              class="mt-8 md:mt-0 md:pl-8 md:border-l md:border-white/10 pb-8 md:pb-10"
+            >
+              <div
+                class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
+              >
+                <svg
+                  class="w-10 h-10 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z"></path>
+                  <path
+                    fill-rule="evenodd"
+                    d="M21.707 21.707a1 1 0 0 1-1.414 0l-3.5-3.5a1 1 0 0 1 1.414-1.414l3.5 3.5a1 1 0 0 1 0 1.414Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
+                Google search and AI summaries are multimodal
+              </h3>
+              <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
+                Google now understands pages as more than text—combining written
+                content, video understanding, and structured metadata.
+              </p>
+              <p class="text-xs text-slate-500">
+                <a
+                  href="https://developers.google.com/search/docs/appearance/multimedia-content/video"
+                  class="text-slate-400 hover:text-slate-300 underline"
+                  target="_blank"
+                  rel="noreferrer">Google search central documentation</a
+                >
+              </p>
+            </div>
+
+            <div class="mt-8 md:mt-10 md:pr-8">
+              <div
+                class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
+              >
+                <svg
+                  class="w-10 h-10 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
+                YouTube gets 651% more citations in AI overviews
+              </h3>
+              <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
+                YouTube citations in AI Overviews are estimated to have grown by
+                over 400% in 2025 and visual demonstration content citations
+                rose by over 590%.
+              </p>
+              <p class="text-xs text-slate-500">
+                <a
+                  href="https://neilpatel.com/marketing-stats/youtube-ai-overviews/"
+                  target="_blank"
+                  rel="noreferrer">NP Digital</a
+                >
+              </p>
+            </div>
+            <div class="mt-8 md:mt-10 md:pl-8 md:border-l md:border-white/10">
+              <div
+                class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
+              >
+                <svg
+                  class="w-10 h-10 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
+                    clip-rule="evenodd"></path>
+                  <path
+                    d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
+                Explainers influence decisions
+              </h3>
+              <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
+                85% of people have been convinced to buy a product or service by
+                watching a video.
+              </p>
+              <p class="text-xs text-slate-500 hover:text-slate-300 underline">
+                <a
+                  href="https://wyzowl.com/video-marketing-statistics/"
+                  target="_blank"
+                  rel="noreferrer">Wyzowl State of Video Marketing 2026</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="lux-section lux-section--airy border-t border-white/5"
+        id="services"
+      >
+        <div class="mx-auto max-w-screen-xl px-4">
+          <div
+            class="mx-auto mb-10 max-w-3xl sm:flex sm:items-center sm:gap-6 sm:text-left"
+          >
+            <Image
+              src={ryanPortrait}
+              alt="Ryan Blunden"
+              width={144}
+              height={144}
+              class="mx-auto mb-4 h-40 w-40 rounded-full border border-white/10 object-cover sm:mx-0 sm:mb-0"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="text-center sm:text-left">
+              <h2 class="lux-section-title mt-1">
+                I help you ship videos faster
+              </h2>
+              <p class="lux-section-lede mt-4">
+                <strong>Working with me is simple</strong>. You provide the
+                source material—I handle everything else: scripting, filming,
+                screen recording, and editing, with minimal involvement required
+                from your team or engineers.
+              </p>
+            </div>
+          </div>
+          <div class="pt-10 grid gap-8 sm:gap-10 md:grid-cols-3">
+            <div class="flex items-start gap-4">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M20 10H4v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8ZM9 13v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"
+                    clip-rule="evenodd"></path>
+                  <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
+                  Start with approved materials
+                </h3>
+                <p class="text-slate-300">
+                  Already vetted docs, tutorials, and demos can become videos
+                  without a lengthy review process.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
+                  Minimal engineering input required
+                </h3>
+                <p class="text-slate-300">
+                  In-use assets are proven to work, removing the need for
+                  extensive engineering involvement and review.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M14 7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7Zm2 9.387 4.684 1.562A1 1 0 0 0 22 17V7a1 1 0 0 0-1.316-.949L16 7.613v8.774Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
+                  Ship video content consistently
+                </h3>
+                <p class="text-slate-300">
+                  Establish a repeatable video production motion that can evolve
+                  and scale as your video capabilities grow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="lux-section border-t border-white/5">
+        <div class="mx-auto max-w-screen-xl px-4">
+          <div class="mx-auto mb-12 max-w-4xl text-center">
+            <h2 class="lux-section-title">
+              Why teams trust me to produce their technical videos
+            </h2>
+            <p class="lux-section-lede mt-4">
+              Here's how my experience, skills, and approach allow me to produce
+              technically accurate videos that build trust with developers—and
+              confidence in your brand and products.
             </p>
           </div>
 
           <div
-            class="mt-8 md:mt-0 md:pl-8 md:border-l md:border-white/10 pb-8 md:pb-10"
+            class="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
           >
-            <div
-              class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
-            >
-              <svg
-                class="w-10 h-10 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z"></path>
-                <path
-                  fill-rule="evenodd"
-                  d="M21.707 21.707a1 1 0 0 1-1.414 0l-3.5-3.5a1 1 0 0 1 1.414-1.414l3.5 3.5a1 1 0 0 1 0 1.414Z"
-                  clip-rule="evenodd"></path>
-              </svg>
+            <div class="lux-card border border-white/5 p-5">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"></path>
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+                Full-stack + DevOps background
+              </h3>
+              <p class="mt-2 text-slate-300">
+                I’ve worked across development and DevOps, so I can quickly
+                grasp most tools, workflows, and infrastructure patterns.
+              </p>
             </div>
-            <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              Google search and AI summaries are multimodal
-            </h3>
-            <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
-              Google now understands pages as more than text—combining written
-              content, video understanding, and structured metadata.
-            </p>
-            <p class="text-xs text-slate-500">
-              <a
-                href="https://developers.google.com/search/docs/appearance/multimedia-content/video"
-                class="text-slate-400 hover:text-slate-300 underline"
-                target="_blank"
-                rel="noreferrer">Google search central documentation</a
-              >
-            </p>
-          </div>
 
-          <div class="mt-8 md:mt-10 md:pr-8">
-            <div
-              class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
-            >
-              <svg
-                class="w-10 h-10 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
-                  clip-rule="evenodd"></path>
-              </svg>
+            <div class="lux-card border border-white/5 p-5">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+                Low-touch engineering involvement
+              </h3>
+              <p class="mt-2 text-slate-300">
+                Most videos can be produced from existing content with minimal
+                questions and a single technical review.
+              </p>
             </div>
-            <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              YouTube gets 651% more citations in AI overviews
-            </h3>
-            <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
-              YouTube citations in AI Overviews are estimated to have grown by
-              over 400% in 2025 and visual demonstration content citations rose
-              by over 590%.
-            </p>
-            <p class="text-xs text-slate-500">
-              <a
-                href="https://neilpatel.com/marketing-stats/youtube-ai-overviews/"
-                target="_blank"
-                rel="noreferrer">NP Digital</a
-              >
-            </p>
-          </div>
-          <div class="mt-8 md:mt-10 md:pl-8 md:border-l md:border-white/10">
-            <div
-              class="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-lg bg-white/5"
-            >
-              <svg
-                class="w-10 h-10 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4 5.78571C4 4.80909 4.78639 4 5.77778 4H18.2222C19.2136 4 20 4.80909 20 5.78571V15H4V5.78571ZM12 12c0-.5523.4477-1 1-1h2c.5523 0 1 .4477 1 1s-.4477 1-1 1h-2c-.5523 0-1-.4477-1-1ZM8.27586 6.31035c.38089-.39993 1.01387-.41537 1.4138-.03449l2.62504 2.5c.1981.18875.3103.45047.3103.72414 0 .27368-.1122.5354-.3103.7241l-2.62504 2.5c-.39993.3809-1.03291.3655-1.4138-.0344-.38088-.4-.36544-1.033.03449-1.4138L10.175 9.5 8.31035 7.72414c-.39993-.38089-.41537-1.01386-.03449-1.41379Z"
-                  clip-rule="evenodd"></path>
-                <path
-                  d="M2 17v1c0 1.1046.89543 2 2 2h16c1.1046 0 2-.8954 2-2v-1H2Z"
-                ></path>
-              </svg>
+
+            <div class="lux-card border border-white/5 p-5">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.616l-2.88 2.592C8.537 20.461 7 19.776 7 18.477V17H5a2 2 0 0 1-2-2V6Zm4 2a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2H7Zm8 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Zm-8 3a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H7Zm5 0a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2h-5Z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+                Developers can tell I'm one of them
+              </h3>
+              <p class="mt-2 text-slate-300">
+                I don't market your product — I show it in action using
+                terminology and tools that developers understand and trust.
+              </p>
             </div>
-            <h3 class="mb-3 text-2xl font-semibold text-white sm:text-2xl">
-              Explainers influence decisions
-            </h3>
-            <p class="mx-auto mb-3 max-w-md text-basem text-slate-300">
-              85% of people have been convinced to buy a product or service by
-              watching a video.
-            </p>
-            <p class="text-xs text-slate-500 hover:text-slate-300 underline">
-              <a
-                href="https://wyzowl.com/video-marketing-statistics/"
-                target="_blank"
-                rel="noreferrer">Wyzowl State of Video Marketing 2026</a
-              >
-            </p>
+
+            <div class="lux-card border border-white/5 p-5">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+                Deep product understanding
+              </h3>
+              <p class="mt-2 text-slate-300">
+                I take the time to understand your product and present it with
+                the clarity and accuracy you'd expect from your own DevRel team.
+              </p>
+            </div>
+            <div class="lux-card border border-white/5 p-5">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+                High-quality production
+              </h3>
+              <p class="mt-2 text-slate-300">
+                I use commercial-grade cameras, microphones, and lighting to
+                deliver video quality comparable to an in-house team.
+              </p>
+            </div>
+            <div class="lux-card border border-white/5 p-5">
+              <div class="lux-icon-tile">
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
+                Video in your brand voice and tone
+              </h3>
+              <p class="mt-2 text-slate-300">
+                I blend my conversational style with your brand voice and
+                messaging, so your product is represented accurately.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
 
-    <section
-      class="lux-section lux-section--airy border-t border-white/5"
-      id="services"
-    >
-      <div class="mx-auto max-w-screen-xl px-4">
-        <div
-          class="mx-auto mb-10 max-w-3xl sm:flex sm:items-center sm:gap-6 sm:text-left"
+    <section class="lux-section pt-4">
+      <TestimonialGrid title="Testimonials">
+        <Testimonial
+          name="Nolan Di Mare Sullivan"
+          image="nolan"
+          title="Founding DevRel, Speakeasy"
         >
-          <Image
-            src={ryanPortrait}
-            alt="Ryan Blunden"
-            width={144}
-            height={144}
-            class="mx-auto mb-4 h-40 w-40 rounded-full border border-white/10 object-cover sm:mx-0 sm:mb-0"
-            loading="eager"
-            decoding="async"
-          />
-          <div class="text-center sm:text-left">
-            <h2 class="lux-section-title mt-1">
-              I help you ship videos faster
-            </h2>
-            <p class="lux-section-lede mt-4">
-              <strong>Working with me is simple</strong>. You provide the source
-              material—I handle everything else: scripting, filming, screen
-              recording, and editing, with minimal involvement required from
-              your team or engineers.
-            </p>
-          </div>
-        </div>
-        <div class="pt-10 grid gap-8 sm:gap-10 md:grid-cols-3">
-          <div class="flex items-start gap-4">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M20 10H4v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8ZM9 13v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1Z"
-                  clip-rule="evenodd"></path>
-                <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
-                Start with approved materials
-              </h3>
-              <p class="text-slate-300">
-                Already vetted docs, tutorials, and demos can become videos
-                without a lengthy review process.
-              </p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
-                Minimal engineering input required
-              </h3>
-              <p class="text-slate-300">
-                In-use assets are proven to work, removing the need for
-                extensive engineering involvement and review.
-              </p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M14 7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7Zm2 9.387 4.684 1.562A1 1 0 0 0 22 17V7a1 1 0 0 0-1.316-.949L16 7.613v8.774Z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
-                Ship video content consistently
-              </h3>
-              <p class="text-slate-300">
-                Establish a repeatable video production motion that can evolve
-                and scale as your video capabilities grow.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+          When you have a technical product, it's very hard to find people who
+          know how to produce videos, and also can grok your problem space. Ryan
+          is one of the talented few who can do both!
+        </Testimonial>
+        <Testimonial
+          name="Maria Zahorcova"
+          image="maria"
+          title="Chief Marketing Officer, Octomind"
+        >
+          Having Ryan on board is such a relief. He works with our developers to
+          extract insights and put them into a compelling narrative. Ryan not
+          only helps scale our content creation strategy—he writes pieces
+          intriguing enough to get us on the front page of Hacker News.
+        </Testimonial>
+        <Testimonial name="Brian Vallelunga" image="brian" title="CEO, Doppler">
+          Highly recommend Ryan! He produces incredibly high quality content and
+          really understands developers!
+        </Testimonial>
+        <Testimonial
+          name="Yasmine Helmy"
+          image="yasmine"
+          title="Growth Marketing Lead, Instabug"
+        >
+          It was a pleasure working with Ryan. He's an expert when it comes to
+          DevRel and complex technical topics.
+        </Testimonial>
+        <Testimonial
+          name="Dan Adler"
+          image="dan"
+          title="Head of Business, Operations and Strategy, Sourcegraph"
+        >
+          Ryan made awesome educational videos that were effective at promotion
+          as well. He knows how to create engaging content!
+        </Testimonial>
+        <Testimonial
+          name="Parag Baxi"
+          image="parag"
+          title="Product Portfolio Manager, Tenable Network Security"
+        >
+          Ryan's custom tailored training directly enabled Sales Engineering,
+          training, professional services, Product management, and marketing to
+          better understand and communicate container security in the DevOps
+          language to our customers and to our colleagues.
+        </Testimonial>
+      </TestimonialGrid>
     </section>
-    <section class="lux-section border-t border-white/5">
+
+    <section class="lux-section pt-4" id="my-work">
       <div class="mx-auto max-w-screen-xl px-4">
-        <div class="mx-auto mb-12 max-w-4xl text-center">
-          <h2 class="lux-section-title">
-            Why teams trust me to produce their technical videos
-          </h2>
+        <div class="mx-auto mb-10 text-center">
+          <h2 class="lux-section-title mt-3">Recent Work</h2>
           <p class="lux-section-lede mt-4">
-            Here's how my experience, skills, and approach allow me to produce
-            technically accurate videos that build trust with developers—and
-            confidence in your brand and products.
+            A snapshot of publicly available recent work. More available upon
+            request.
           </p>
         </div>
+        <YouTubeGrid
+          videos={[
+            {
+              href: "https://www.youtube.com/watch?v=ZHYK0m9rpB0",
+              title: "Experiment, test, and create an MCP server",
+              description:
+                "Learn how to roll out your own MCP server using an OpenAPI spec and the Speakeasy CLI.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=eg1pYK1nTEU",
+              title:
+                "Securely running AI coding agents in enterprise environments",
+              description:
+                "Exploring the risks of using AI coding agents on local laptops vs. cloud development environments.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s",
+              title:
+                "Generating a Terraform provider from an API spec | Part I",
+              description:
+                "Create a Terraform provider using the Speakeasy CLI and OpenAPI spec.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s",
+              title:
+                "Generating a Terraform provider from an API spec | Part II",
+              description:
+                "Publish the Terraform provider to the Terraform Registry.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=L7WrsaV8GsU",
+              title: "Doppler KubeCon 2025 booth loop",
+              description: "Looping booth video developed for KubeCon.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=Ef5QdrmCOs8",
+              title: "Speakeasy getting started series | Part 1",
+              description: "Optimizing your OpenAPI spec.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=BphVOeWODEY",
+              title: "Speakeasy getting started series | Part 2",
+              description: "Generating your first SDK.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=RmpgVIFzed4",
+              title: "Speakeasy getting started series | Part 3",
+              description: "CI/CD Configuration",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=i9XWzZnDikA",
+              title: "Speakeasy getting started series | Part 4",
+              description: "Publishing your SDK.",
+            },
+            {
+              href: "https://www.youtube.com/watch?v=RU8ZRswPb_s",
+              title: "Doppler vs traditional secrets managers",
+              description:
+                "Shows how Doppler differs from traditional secrets managers.",
+            },
+          ]}
+        />
+      </div>
+    </section>
 
-        <div
-          class="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          <div class="lux-card border border-white/5 p-5">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"></path>
-              </svg>
-            </div>
-            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Full-stack + DevOps background
-            </h3>
-            <p class="mt-2 text-slate-300">
-              I’ve worked across development and DevOps, so I can quickly grasp
-              most tools, workflows, and infrastructure patterns.
-            </p>
-          </div>
+    <section class="lux-section" id="faqs">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mx-auto mb-10 max-w-2xl text-center">
+          <h2 class="lux-section-title mt-3">FAQs</h2>
+          <p class="lux-section-lede mt-4">
+            Answers to the most common questions teams ask before we kick off.
+          </p>
+        </div>
+        <div class="mx-auto max-w-4xl">
+          <FAQList title="FAQs">
+            <FAQ title="What kinds of videos do you produce?">
+              <p>
+                I focus on technical videos used for developer onboarding,
+                enablement, product demos, and customer success.
+              </p>
+              <p>
+                This includes documentation walkthroughs, feature demos,
+                getting-started series, integration guides, and internal or
+                external enablement libraries.
+              </p>
+              <p>
+                Sorry, but I don't do purely promotional or marketing videos
+                (e.g., animated explainer videos or ads).
+              </p>
+            </FAQ>
 
-          <div class="lux-card border border-white/5 p-5">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Low-touch engineering involvement
-            </h3>
-            <p class="mt-2 text-slate-300">
-              Most videos can be produced from existing content with minimal
-              questions and a single technical review.
-            </p>
-          </div>
+            <FAQ title="Do we need existing content to get started?">
+              <p>
+                Yes. Existing documentation, tutorials, demos, or support
+                articles that have been vetted and approved are required as a
+                starting point.
+              </p>
+              <p>
+                If you need help revising existing materials or creating new
+                content for video specifically, I can be hired at an hourly or
+                daily rate for scripting and content creation.
+              </p>
+            </FAQ>
 
-          <div class="lux-card border border-white/5 p-5">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.616l-2.88 2.592C8.537 20.461 7 19.776 7 18.477V17H5a2 2 0 0 1-2-2V6Zm4 2a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2H7Zm8 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Zm-8 3a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H7Zm5 0a1 1 0 1 0 0 2h5a1 1 0 1 0 0-2h-5Z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Developers can tell I'm one of them
-            </h3>
-            <p class="mt-2 text-slate-300">
-              I don't market your product — I show it in action using
-              terminology and tools that developers understand and trust.
-            </p>
-          </div>
+            <FAQ title="What involvement do you require from Engineering?">
+              <p>
+                In most cases, involvement is limited to async Slack questions
+                when I need clarification on technical details not covered in
+                the source, plus a final script review for technical accuracy.
+              </p>
+              <p>
+                The goal is to remove engineers from the production process as
+                much as possible and to only involve them when absolutely
+                necessary.
+              </p>
+            </FAQ>
 
-          <div class="lux-card border border-white/5 p-5">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Deep product understanding
-            </h3>
-            <p class="mt-2 text-slate-300">
-              I take the time to understand your product and present it with the
-              clarity and accuracy you'd expect from your own DevRel team.
-            </p>
-          </div>
-          <div class="lux-card border border-white/5 p-5">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              High-quality production
-            </h3>
-            <p class="mt-2 text-slate-300">
-              I use commercial-grade cameras, microphones, and lighting to
-              deliver video quality comparable to an in-house team.
-            </p>
-          </div>
-          <div class="lux-card border border-white/5 p-5">
-            <div class="lux-icon-tile">
-              <svg
-                class="h-6 w-6"
-                fill="currentColor"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-              Video in your brand voice and tone
-            </h3>
-            <p class="mt-2 text-slate-300">
-              I blend my conversational style with your brand voice and
-              messaging, so your product is represented accurately.
-            </p>
-          </div>
+            <FAQ title="How does pricing work for this kind of engagement?">
+              <p>
+                Most projects are scoped and priced as a fixed engagement based
+                on the length and complexity of the resource.
+              </p>
+              <p>
+                If there are significant unknowns, such as incomplete
+                documentation or complex technical setups, I may need a short
+                discovery phase billed at an hourly rate before providing a
+                scope and price.
+              </p>
+            </FAQ>
+
+            <FAQ title="How long does it take to produce videos?">
+              <p>
+                Timelines depend on scope, availability, and familiarity with
+                your products and domain, but most videos are delivered within
+                one to two weeks of starting production.
+              </p>
+              <p>
+                The more robust your docs and environments are, the faster I can
+                ship.
+              </p>
+            </FAQ>
+
+            <FAQ title="How do reviews and revisions work?">
+              <p>
+                Scripts allow for three revisions before filming begins, and the
+                final video allows for a single review with non-piece-to-camera
+                edits only, e.g., screen captures, b-roll, and motion graphics.
+              </p>
+              <p>Additional revisions can be accommodated at an hourly rate.</p>
+              <p>
+                The key to minimizing revisions is ensuring all stakeholders
+                have signed off on the source materials and script before
+                filming.
+              </p>
+            </FAQ>
+
+            <FAQ
+              title="How do you communicate and collaborate during projects?"
+            >
+              <p>
+                I typically use Slack for async communication via a private
+                channel with the required stakeholders and technical staff.
+              </p>
+            </FAQ>
+            <FAQ
+              title="How much control do we have over the messaging and scripting?"
+            >
+              <p>
+                As a general rule, I'm happy to use precise messaging about your
+                product features and functionality and am open to feedback on
+                tone and style as long as I can still present authentically.
+              </p>
+              <p>
+                Where I'll push back is on unverifiable claims or marketing
+                language that would be unnatural for me to say or doesn't
+                resonate with developers. If it's not something I would say, I
+                won't say it, as then my trust and credibility with the audience
+                is compromised.
+              </p>
+              <p>
+                In these cases, I won't just reject that part of the script, but
+                will provide alternatives that aim to get the same point across.
+              </p>
+            </FAQ>
+            <FAQ title="Do you stick exactly to your script?">
+              <p>
+                For piece-to-camera sections and parts where I'm explaining
+                concepts or workflows, I generally stick closely to the script
+                to ensure accuracy with your messaging.
+              </p>
+              <p>
+                For screen recordings and demos, I may improvise slightly to
+                maintain a natural flow, but I'll always ensure that the key
+                points and steps are accurately represented as per the script.
+              </p>
+            </FAQ>
+            <FAQ
+              title="Can you help us establish our internal video production process?"
+            >
+              <p>
+                Yes, and I often end up working in a consultative capacity once
+                teams are ready to scale-up video production by leveraging
+                internal staff and resources.
+              </p>
+              <p>
+                Whether it's advice on gear to purchase or coaching staff to be
+                comfortable on camera, I'm happy to share my knowledge and
+                experience to help you be self-sufficient.
+              </p>
+              <p>
+                My goal is not to make you dependent on me — but to quickly get
+                you up and running with a repeatable process that your team can
+                own and eventually scale internally.
+              </p>
+            </FAQ>
+          </FAQList>
         </div>
       </div>
     </section>
+
+    <section class="lux-section border-t border-white/5" id="schedule">
+      <div class="mx-auto max-w-screen-xl px-4">
+        <div class="mx-auto mb-10 text-center">
+          <h2 class="lux-section-title mt-3">Ready to get started?</h2>
+          <p class="lux-section-lede mt-4">
+            Pick a time that works for you and let's discuss how I can help with
+            your video content needs.
+          </p>
+        </div>
+        <div class="lux-card cal-embed min-h-[720px] w-full overflow-hidden">
+          <CalEmbed
+            client:only="react"
+            calLink="ryan-blunden-dev/30min"
+            namespace="30min"
+            view="month_view"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/5 bg-slate-950/60">
+      <div
+        class="mx-auto max-w-screen-xl px-4 py-6 text-center text-sm text-slate-400"
+      >
+        © 2026 Ryan Blunden. All rights reserved.
+      </div>
+    </footer>
   </main>
-
-  <section class="lux-section pt-4">
-    <TestimonialGrid title="Testimonials">
-      <Testimonial
-        name="Nolan Di Mare Sullivan"
-        image="nolan"
-        title="Founding DevRel, Speakeasy"
-      >
-        When you have a technical product, it's very hard to find people who
-        know how to produce videos, and also can grok your problem space. Ryan
-        is one of the talented few who can do both!
-      </Testimonial>
-      <Testimonial
-        name="Maria Zahorcova"
-        image="maria"
-        title="Chief Marketing Officer, Octomind"
-      >
-        Having Ryan on board is such a relief. He works with our developers to
-        extract insights and put them into a compelling narrative. Ryan not only
-        helps scale our content creation strategy—he writes pieces intriguing
-        enough to get us on the front page of Hacker News.
-      </Testimonial>
-      <Testimonial name="Brian Vallelunga" image="brian" title="CEO, Doppler">
-        Highly recommend Ryan! He produces incredibly high quality content and
-        really understands developers!
-      </Testimonial>
-      <Testimonial
-        name="Yasmine Helmy"
-        image="yasmine"
-        title="Growth Marketing Lead, Instabug"
-      >
-        It was a pleasure working with Ryan. He's an expert when it comes to
-        DevRel and complex technical topics.
-      </Testimonial>
-      <Testimonial
-        name="Dan Adler"
-        image="dan"
-        title="Head of Business, Operations and Strategy, Sourcegraph"
-      >
-        Ryan made awesome educational videos that were effective at promotion as
-        well. He knows how to create engaging content!
-      </Testimonial>
-      <Testimonial
-        name="Parag Baxi"
-        image="parag"
-        title="Product Portfolio Manager, Tenable Network Security"
-      >
-        Ryan's custom tailored training directly enabled Sales Engineering,
-        training, professional services, Product management, and marketing to
-        better understand and communicate container security in the DevOps
-        language to our customers and to our colleagues.
-      </Testimonial>
-    </TestimonialGrid>
-  </section>
-
-  <section class="lux-section pt-4" id="my-work">
-    <div class="mx-auto max-w-screen-xl px-4">
-      <div class="mx-auto mb-10 text-center">
-        <h2 class="lux-section-title mt-3">Recent Work</h2>
-        <p class="lux-section-lede mt-4">
-          A snapshot of publicly available recent work. More available upon
-          request.
-        </p>
-      </div>
-      <YouTubeGrid
-        videos={[
-          {
-            href: "https://www.youtube.com/watch?v=ZHYK0m9rpB0",
-            title: "Experiment, test, and create an MCP server",
-            description:
-              "Learn how to roll out your own MCP server using an OpenAPI spec and the Speakeasy CLI.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=eg1pYK1nTEU",
-            title:
-              "Securely running AI coding agents in enterprise environments",
-            description:
-              "Exploring the risks of using AI coding agents on local laptops vs. cloud development environments.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s",
-            title: "Generating a Terraform provider from an API spec | Part I",
-            description:
-              "Create a Terraform provider using the Speakeasy CLI and OpenAPI spec.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=3ti4NZgRonA&t=22s",
-            title: "Generating a Terraform provider from an API spec | Part II",
-            description:
-              "Publish the Terraform provider to the Terraform Registry.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=L7WrsaV8GsU",
-            title: "Doppler KubeCon 2025 booth loop",
-            description: "Looping booth video developed for KubeCon.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=Ef5QdrmCOs8",
-            title: "Speakeasy getting started series | Part 1",
-            description: "Optimizing your OpenAPI spec.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=BphVOeWODEY",
-            title: "Speakeasy getting started series | Part 2",
-            description: "Generating your first SDK.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=RmpgVIFzed4",
-            title: "Speakeasy getting started series | Part 3",
-            description: "CI/CD Configuration",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=i9XWzZnDikA",
-            title: "Speakeasy getting started series | Part 4",
-            description: "Publishing your SDK.",
-          },
-          {
-            href: "https://www.youtube.com/watch?v=RU8ZRswPb_s",
-            title: "Doppler vs traditional secrets managers",
-            description:
-              "Shows how Doppler differs from traditional secrets managers.",
-          },
-        ]}
-      />
-    </div>
-  </section>
-
-  <section class="lux-section" id="faqs">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="mx-auto mb-10 max-w-2xl text-center">
-        <h2 class="lux-section-title mt-3">FAQs</h2>
-        <p class="lux-section-lede mt-4">
-          Answers to the most common questions teams ask before we kick off.
-        </p>
-      </div>
-      <div class="mx-auto max-w-4xl">
-        <FAQList title="FAQs">
-          <FAQ title="What kinds of videos do you produce?">
-            <p>
-              I focus on technical videos used for developer onboarding,
-              enablement, product demos, and customer success.
-            </p>
-            <p>
-              This includes documentation walkthroughs, feature demos,
-              getting-started series, integration guides, and internal or
-              external enablement libraries.
-            </p>
-            <p>
-              Sorry, but I don't do purely promotional or marketing videos
-              (e.g., animated explainer videos or ads).
-            </p>
-          </FAQ>
-
-          <FAQ title="Do we need existing content to get started?">
-            <p>
-              Yes. Existing documentation, tutorials, demos, or support articles
-              that have been vetted and approved are required as a starting
-              point.
-            </p>
-            <p>
-              If you need help revising existing materials or creating new
-              content for video specifically, I can be hired at an hourly or
-              daily rate for scripting and content creation.
-            </p>
-          </FAQ>
-
-          <FAQ title="What involvement do you require from Engineering?">
-            <p>
-              In most cases, involvement is limited to async Slack questions
-              when I need clarification on technical details not covered in the
-              source, plus a final script review for technical accuracy.
-            </p>
-            <p>
-              The goal is to remove engineers from the production process as
-              much as possible and to only involve them when absolutely
-              necessary.
-            </p>
-          </FAQ>
-
-          <FAQ title="How does pricing work for this kind of engagement?">
-            <p>
-              Most projects are scoped and priced as a fixed engagement based on
-              the length and complexity of the resource.
-            </p>
-            <p>
-              If there are significant unknowns, such as incomplete
-              documentation or complex technical setups, I may need a short
-              discovery phase billed at an hourly rate before providing a scope
-              and price.
-            </p>
-          </FAQ>
-
-          <FAQ title="How long does it take to produce videos?">
-            <p>
-              Timelines depend on scope, availability, and familiarity with your
-              products and domain, but most videos are delivered within one to
-              two weeks of starting production.
-            </p>
-            <p>
-              The more robust your docs and environments are, the faster I can
-              ship.
-            </p>
-          </FAQ>
-
-          <FAQ title="How do reviews and revisions work?">
-            <p>
-              Scripts allow for three revisions before filming begins, and the
-              final video allows for a single review with non-piece-to-camera
-              edits only, e.g., screen captures, b-roll, and motion graphics.
-            </p>
-            <p>Additional revisions can be accommodated at an hourly rate.</p>
-            <p>
-              The key to minimizing revisions is ensuring all stakeholders have
-              signed off on the source materials and script before filming.
-            </p>
-          </FAQ>
-
-          <FAQ title="How do you communicate and collaborate during projects?">
-            <p>
-              I typically use Slack for async communication via a private
-              channel with the required stakeholders and technical staff.
-            </p>
-          </FAQ>
-          <FAQ
-            title="How much control do we have over the messaging and scripting?"
-          >
-            <p>
-              As a general rule, I'm happy to use precise messaging about your
-              product features and functionality and am open to feedback on tone
-              and style as long as I can still present authentically.
-            </p>
-            <p>
-              Where I'll push back is on unverifiable claims or marketing
-              language that would be unnatural for me to say or doesn't resonate
-              with developers. If it's not something I would say, I won't say
-              it, as then my trust and credibility with the audience is
-              compromised.
-            </p>
-            <p>
-              In these cases, I won't just reject that part of the script, but
-              will provide alternatives that aim to get the same point across.
-            </p>
-          </FAQ>
-          <FAQ title="Do you stick exactly to your script?">
-            <p>
-              For piece-to-camera sections and parts where I'm explaining
-              concepts or workflows, I generally stick closely to the script to
-              ensure accuracy with your messaging.
-            </p>
-            <p>
-              For screen recordings and demos, I may improvise slightly to
-              maintain a natural flow, but I'll always ensure that the key
-              points and steps are accurately represented as per the script.
-            </p>
-          </FAQ>
-          <FAQ
-            title="Can you help us establish our internal video production process?"
-          >
-            <p>
-              Yes, and I often end up working in a consultative capacity once
-              teams are ready to scale-up video production by leveraging
-              internal staff and resources.
-            </p>
-            <p>
-              Whether it's advice on gear to purchase or coaching staff to be
-              comfortable on camera, I'm happy to share my knowledge and
-              experience to help you be self-sufficient.
-            </p>
-            <p>
-              My goal is not to make you dependent on me — but to quickly get
-              you up and running with a repeatable process that your team can
-              own and eventually scale internally.
-            </p>
-          </FAQ>
-        </FAQList>
-      </div>
-    </div>
-  </section>
-
-  <section class="lux-section border-t border-white/5" id="schedule">
-    <div class="mx-auto max-w-screen-xl px-4">
-      <div class="mx-auto mb-10 text-center">
-        <h2 class="lux-section-title mt-3">Ready to get started?</h2>
-        <p class="lux-section-lede mt-4">
-          Pick a time that works for you and let's discuss how I can help with
-          your video content needs.
-        </p>
-      </div>
-      <div class="lux-card cal-embed min-h-[720px] w-full overflow-hidden">
-        <CalEmbed
-          client:only="react"
-          calLink="ryan-blunden-dev/30min"
-          namespace="30min"
-          view="month_view"
-        />
-      </div>
-    </div>
-  </section>
-
-  <footer class="border-t border-white/5 bg-slate-950/60">
-    <div
-      class="mx-auto max-w-screen-xl px-4 py-6 text-center text-sm text-slate-400"
-    >
-      © 2026 Ryan Blunden. All rights reserved.
-    </div>
-  </footer>
 </BaseLayout>
