@@ -9,10 +9,9 @@ import TestimonialGrid from "../components/testimonial-grid.astro";
 import YouTubeGrid from "../components/youtube-grid.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title =
-  "RyanBlunden.dev — Technical video production for developer‑focused companies";
+const title = "Developer-focused video production for tech companies";
 const description =
-  "Ship videos faster by turning existing technical materials into engaging videos used for developer enablement, product onboarding, and customer success.";
+  "Professional developer-focused video for tech companies — produced for you, or I'll coach your teams to scale video production in-house.";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -35,7 +34,8 @@ const description =
         </nav>
         <a
           class="inline-flex h-10 items-center justify-center rounded-xl border border-transparent bg-white px-7 text-sm font-semibold !text-black no-underline shadow-[0_10px_24px_rgba(0,0,0,0.28)]"
-          href="#schedule"
+          href="https://cal.com/ryan-blunden-dev"
+          target="_blank"
         >
           Book a call
         </a>
@@ -46,13 +46,12 @@ const description =
       <div class="mx-auto max-w-screen-xl px-4">
         <div class="text-center">
           <h1 class="lux-hero-title">
-            Accelerate technical video production without putting your engineers
-            on camera
+            Ship more developer-focused video content
           </h1>
           <p class="lux-hero-subtitle mx-auto mt-4">
-            I can turn your existing technical content into standalone videos
-            that drive developer engagement across your marketing site,
-            documentation, and YouTube.
+            I produce professional developer-focused videos for tech companies —
+            or teach you everything I know so you can scale video production
+            in-house.
           </p>
         </div>
         <div class="mt-10 sm:mt-12 lg:mt-16">
@@ -134,7 +133,7 @@ const description =
             >
               <iframe
                 class="aspect-video h-full w-full"
-                src="https://www.youtube.com/embed/pesWa2wod0k?rel=0&modestbranding=1"
+                src="https://www.youtube.com/embed/3j3RbjVgHz8?rel=0&modestbranding=1"
                 title="Educational sample video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -386,13 +385,12 @@ const description =
             />
             <div class="text-center sm:text-left">
               <h2 class="lux-section-title mt-1">
-                I help you ship videos faster
+                Accelerate video production
               </h2>
               <p class="lux-section-lede mt-4">
-                <strong>Working with me is simple</strong>. You provide the
-                source material—I handle everything else: scripting, filming,
-                screen recording, and editing, with minimal involvement required
-                from your team or engineers.
+                Whether you're launching something new or turning existing
+                content into video — scripting, filming, screen recording, and
+                editing, done for you or coached start to finish.
               </p>
             </div>
           </div>
@@ -416,7 +414,7 @@ const description =
               </div>
               <div>
                 <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
-                  Start with approved materials
+                  Start with content that works
                 </h3>
                 <p class="text-slate-300">
                   Already vetted docs, tutorials, and demos can become videos
@@ -441,11 +439,11 @@ const description =
               </div>
               <div>
                 <h3 class="mb-1 text-lg font-semibold leading-tight text-white">
-                  Minimal engineering input required
+                  New content developers want to see
                 </h3>
                 <p class="text-slate-300">
-                  In-use assets are proven to work, removing the need for
-                  extensive engineering involvement and review.
+                  Starting from what developers are already searching for means
+                  every new video is built around a genuine audience need.
                 </p>
               </div>
             </div>
@@ -481,12 +479,13 @@ const description =
         <div class="mx-auto max-w-screen-xl px-4">
           <div class="mx-auto mb-12 max-w-4xl text-center">
             <h2 class="lux-section-title">
-              Why teams trust me to produce their technical videos
+              Why teams trust me with their developer-focused video strategy
             </h2>
             <p class="lux-section-lede mt-4">
-              Here's how my experience, skills, and approach allow me to produce
-              technically accurate videos that build trust with developers—and
-              confidence in your brand and products.
+              Developer-focused video only works if developers trust it. Here's
+              how 7 years of experience across development, DevRel, and video
+              production translates into engaging video content that developers
+              find genuinely useful.
             </p>
           </div>
 
@@ -541,11 +540,12 @@ const description =
                 </svg>
               </div>
               <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-                Low-touch engineering involvement
+                Low engineering overhead
               </h3>
               <p class="mt-2 text-slate-300">
-                Most videos can be produced from existing content with minimal
-                questions and a single technical review.
+                Good developer-focused video shouldn't require extensive
+                engineering involvement — most of the information you need is
+                already in your existing docs and demos.
               </p>
             </div>
 
@@ -619,11 +619,12 @@ const description =
                 </svg>
               </div>
               <h3 class="mt-5 text-lg font-semibold text-white sm:text-xl">
-                High-quality production
+                Production quality is credibility
               </h3>
               <p class="mt-2 text-slate-300">
-                I use commercial-grade cameras, microphones, and lighting to
-                deliver video quality comparable to an in-house team.
+                On-camera confidence combined with high-quality audio and video
+                mean the production quality is a reflection of the product
+                itself.
               </p>
             </div>
             <div class="lux-card border border-white/5 p-5">
@@ -647,8 +648,9 @@ const description =
                 Video in your brand voice and tone
               </h3>
               <p class="mt-2 text-slate-300">
-                I blend my conversational style with your brand voice and
-                messaging, so your product is represented accurately.
+                Every video should feel like it came from your team — the tone,
+                the pacing, and the messaging all reflecting who you are, not a
+                generic production house.
               </p>
             </div>
           </div>
@@ -722,10 +724,10 @@ const description =
         <YouTubeGrid
           videos={[
             {
-              href: "https://www.youtube.com/watch?v=pesWa2wod0k?rel=0&modestbranding=1",
-              title: "What Is a Vector Database? (in 2026)",
+              href: "https://www.youtube.com/watch?v=3j3RbjVgHz8?rel=0&modestbranding=1",
+              title: "How Do Vector Embeddings Work?",
               description:
-                "An overview of what vector databases are, what embeddings represent, and how similarity search works.",
+                "An overview of vector embeddings are and how similarity search works.",
             },
             {
               href: "https://www.youtube.com/watch?v=fb39jGziX_c",
@@ -791,14 +793,28 @@ const description =
               title: "Speakeasy getting started series | Part 4",
               description: "Publishing your SDK.",
             },
-            {
-              href: "https://www.youtube.com/watch?v=RU8ZRswPb_s",
-              title: "Doppler vs traditional secrets managers",
-              description:
-                "Shows how Doppler differs from traditional secrets managers.",
-            },
           ]}
         />
+      </div>
+    </section>
+
+    <section class="lux-section border-t border-white/5" id="schedule">
+      <div class="mx-auto max-w-screen-xl px-4">
+        <div class="mx-auto mb-10 text-center">
+          <h2 class="lux-section-title mt-3">Ready to get started?</h2>
+          <p class="lux-section-lede mt-4">
+            Pick a time that works for you and let's discuss how I can help with
+            your video content needs.
+          </p>
+        </div>
+        <div class="lux-card cal-embed min-h-[720px] w-full overflow-hidden">
+          <CalEmbed
+            client:only="react"
+            calLink="ryan-blunden-dev/"
+            namespace=""
+            view="month_view"
+          />
+        </div>
       </div>
     </section>
 
@@ -824,23 +840,31 @@ const description =
               </p>
               <p>
                 Sorry, but I don't do purely promotional or marketing videos
-                (e.g., animated explainer videos or ads).
+                that don't at least have a product demo or educational
+                component.
               </p>
             </FAQ>
-
-            <FAQ title="Do we need existing content to get started?">
+            <FAQ
+              title="Can you help us build an internal video production capability?"
+            >
               <p>
-                Yes. Existing documentation, tutorials, demos, or support
-                articles that have been vetted and approved are required as a
-                starting point.
+                Yes — and this is something I offer as an intensive dedicated
+                coaching programme.
               </p>
               <p>
-                If you need help revising existing materials or creating new
-                content for video specifically, I can be hired at an hourly or
-                daily rate for scripting and content creation.
+                Over 5 weeks, I take individuals or small teams through the full
+                video production process from start to finish — covering
+                everything from scripting and on-camera delivery through to
+                filming, editing, and publishing. By the end, you'll have
+                produced a professional-quality video and have a repeatable
+                process your team can own and scale internally.
+              </p>
+              <p>
+                My goal is not to make you dependent on me — but to quickly get
+                you up and running with a repeatable process that your team can
+                own and eventually scale internally.
               </p>
             </FAQ>
-
             <FAQ title="What involvement do you require from Engineering?">
               <p>
                 In most cases, involvement is limited to async Slack questions
@@ -854,7 +878,7 @@ const description =
               </p>
             </FAQ>
 
-            <FAQ title="How does pricing work for this kind of engagement?">
+            <FAQ title="How does pricing work for video production?">
               <p>
                 Most projects are scoped and priced as a fixed engagement based
                 on the length and complexity of the resource.
@@ -933,46 +957,7 @@ const description =
                 points and steps are accurately represented as per the script.
               </p>
             </FAQ>
-            <FAQ
-              title="Can you help us establish our internal video production process?"
-            >
-              <p>
-                Yes, and I often end up working in a consultative capacity once
-                teams are ready to scale-up video production by leveraging
-                internal staff and resources.
-              </p>
-              <p>
-                Whether it's advice on gear to purchase or coaching staff to be
-                comfortable on camera, I'm happy to share my knowledge and
-                experience to help you be self-sufficient.
-              </p>
-              <p>
-                My goal is not to make you dependent on me — but to quickly get
-                you up and running with a repeatable process that your team can
-                own and eventually scale internally.
-              </p>
-            </FAQ>
           </FAQList>
-        </div>
-      </div>
-    </section>
-
-    <section class="lux-section border-t border-white/5" id="schedule">
-      <div class="mx-auto max-w-screen-xl px-4">
-        <div class="mx-auto mb-10 text-center">
-          <h2 class="lux-section-title mt-3">Ready to get started?</h2>
-          <p class="lux-section-lede mt-4">
-            Pick a time that works for you and let's discuss how I can help with
-            your video content needs.
-          </p>
-        </div>
-        <div class="lux-card cal-embed min-h-[720px] w-full overflow-hidden">
-          <CalEmbed
-            client:only="react"
-            calLink="ryan-blunden-dev/30min"
-            namespace="30min"
-            view="month_view"
-          />
         </div>
       </div>
     </section>
